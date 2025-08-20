@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("DentisConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.132;Initial Catalog=Dentis;Persist Security Info=True;User "& _ 
+            "ID=sa;Password=den123$%^")>  _
+        Public ReadOnly Property DentisConnectionString1() As String
+            Get
+                Return CType(Me("DentisConnectionString1"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
@@ -75,9 +86,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.PremierM.My.MySettings
+        Friend ReadOnly Property Settings() As Global.DentisHelper.My.MySettings
             Get
-                Return Global.PremierM.My.MySettings.Default
+                Return Global.DentisHelper.My.MySettings.Default
             End Get
         End Property
     End Module

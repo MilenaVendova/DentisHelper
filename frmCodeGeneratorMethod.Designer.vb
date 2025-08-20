@@ -23,7 +23,7 @@ Partial Class frmCodeGeneratorMethod
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.DsClassControler = New PremierM.dsClassControler()
+        Me.DsClassControler = New DentisHelper.dsClassControler()
         Me.TbControlerMethodBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TbControlerMethodDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()

@@ -1073,7 +1073,6 @@ export class {1}Service {
     End Sub
     Private Sub btnGO_Click(sender As Object, e As EventArgs) Handles btnGO.Click
         Try
-
             If lbObjects.SelectedItem IsNot Nothing Then
                 Dim ObjectPath, ObjectName As String
                 ObjectPath = lbObjects.SelectedValue.ToString

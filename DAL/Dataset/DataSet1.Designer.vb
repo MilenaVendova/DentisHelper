@@ -25,7 +25,7 @@ Option Explicit On
 Partial Public Class DataSet1
     Inherits Global.System.Data.DataSet
     
-    Private tabletbPatient As tbPatientDataTable
+    Private tabletbItemType As tbItemTypeDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class DataSet1
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("tbPatient")) Is Nothing) Then
-                MyBase.Tables.Add(New tbPatientDataTable(ds.Tables("tbPatient")))
+            If (Not (ds.Tables("tbItemType")) Is Nothing) Then
+                MyBase.Tables.Add(New tbItemTypeDataTable(ds.Tables("tbItemType")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class DataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property tbPatient() As tbPatientDataTable
+    Public ReadOnly Property tbItemType() As tbItemTypeDataTable
         Get
-            Return Me.tabletbPatient
+            Return Me.tabletbItemType
         End Get
     End Property
     
@@ -153,8 +153,8 @@ Partial Public Class DataSet1
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("tbPatient")) Is Nothing) Then
-                MyBase.Tables.Add(New tbPatientDataTable(ds.Tables("tbPatient")))
+            If (Not (ds.Tables("tbItemType")) Is Nothing) Then
+                MyBase.Tables.Add(New tbItemTypeDataTable(ds.Tables("tbItemType")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class DataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tabletbPatient = CType(MyBase.Tables("tbPatient"),tbPatientDataTable)
+        Me.tabletbItemType = CType(MyBase.Tables("tbItemType"),tbItemTypeDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabletbPatient) Is Nothing) Then
-                Me.tabletbPatient.InitVars
+            If (Not (Me.tabletbItemType) Is Nothing) Then
+                Me.tabletbItemType.InitVars
             End If
         End If
     End Sub
@@ -204,13 +204,13 @@ Partial Public Class DataSet1
         Me.Namespace = "http://tempuri.org/DataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tabletbPatient = New tbPatientDataTable()
-        MyBase.Tables.Add(Me.tabletbPatient)
+        Me.tabletbItemType = New tbItemTypeDataTable()
+        MyBase.Tables.Add(Me.tabletbItemType)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializetbPatient() As Boolean
+    Private Function ShouldSerializetbItemType() As Boolean
         Return false
     End Function
     
@@ -273,35 +273,25 @@ Partial Public Class DataSet1
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub tbPatientRowChangeEventHandler(ByVal sender As Object, ByVal e As tbPatientRowChangeEvent)
+    Public Delegate Sub tbItemTypeRowChangeEventHandler(ByVal sender As Object, ByVal e As tbItemTypeRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class tbPatientDataTable
-        Inherits Global.System.Data.TypedTableBase(Of tbPatientRow)
+    Partial Public Class tbItemTypeDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbItemTypeRow)
         
-        Private columnPatientID As Global.System.Data.DataColumn
+        Private columnItemTypeID As Global.System.Data.DataColumn
         
-        Private columnName As Global.System.Data.DataColumn
-        
-        Private columnBirthDate As Global.System.Data.DataColumn
-        
-        Private columnHealthInsuranceNumber As Global.System.Data.DataColumn
-        
-        Private columnShadeID As Global.System.Data.DataColumn
-        
-        Private columnPhone As Global.System.Data.DataColumn
-        
-        Private columnEmail As Global.System.Data.DataColumn
+        Private columnItemType As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "tbPatient"
+            Me.TableName = "tbItemType"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -334,57 +324,17 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property PatientIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ItemTypeIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPatientID
+                Return Me.columnItemTypeID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property NameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ItemTypeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property BirthDateColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnBirthDate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property HealthInsuranceNumberColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnHealthInsuranceNumber
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ShadeIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnShadeID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property PhoneColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPhone
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property EmailColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnEmail
+                Return Me.columnItemType
             End Get
         End Property
         
@@ -399,50 +349,50 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As tbPatientRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbItemTypeRow
             Get
-                Return CType(Me.Rows(index),tbPatientRow)
+                Return CType(Me.Rows(index),tbItemTypeRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPatientRowChanging As tbPatientRowChangeEventHandler
+        Public Event tbItemTypeRowChanging As tbItemTypeRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPatientRowChanged As tbPatientRowChangeEventHandler
+        Public Event tbItemTypeRowChanged As tbItemTypeRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPatientRowDeleting As tbPatientRowChangeEventHandler
+        Public Event tbItemTypeRowDeleting As tbItemTypeRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPatientRowDeleted As tbPatientRowChangeEventHandler
+        Public Event tbItemTypeRowDeleted As tbItemTypeRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddtbPatientRow(ByVal row As tbPatientRow)
+        Public Overloads Sub AddtbItemTypeRow(ByVal row As tbItemTypeRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddtbPatientRow(ByVal Name As String, ByVal BirthDate As Date, ByVal HealthInsuranceNumber As String, ByVal ShadeID As Integer, ByVal Phone As String, ByVal Email As String) As tbPatientRow
-            Dim rowtbPatientRow As tbPatientRow = CType(Me.NewRow,tbPatientRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Name, BirthDate, HealthInsuranceNumber, ShadeID, Phone, Email}
-            rowtbPatientRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowtbPatientRow)
-            Return rowtbPatientRow
+        Public Overloads Function AddtbItemTypeRow(ByVal ItemType As String) As tbItemTypeRow
+            Dim rowtbItemTypeRow As tbItemTypeRow = CType(Me.NewRow,tbItemTypeRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, ItemType}
+            rowtbItemTypeRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbItemTypeRow)
+            Return rowtbItemTypeRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByPatientID(ByVal PatientID As Integer) As tbPatientRow
-            Return CType(Me.Rows.Find(New Object() {PatientID}),tbPatientRow)
+        Public Function FindByItemTypeID(ByVal ItemTypeID As Integer) As tbItemTypeRow
+            Return CType(Me.Rows.Find(New Object() {ItemTypeID}),tbItemTypeRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As tbPatientDataTable = CType(MyBase.Clone,tbPatientDataTable)
+            Dim cln As tbItemTypeDataTable = CType(MyBase.Clone,tbItemTypeDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -450,76 +400,58 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New tbPatientDataTable()
+            Return New tbItemTypeDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnPatientID = MyBase.Columns("PatientID")
-            Me.columnName = MyBase.Columns("Name")
-            Me.columnBirthDate = MyBase.Columns("BirthDate")
-            Me.columnHealthInsuranceNumber = MyBase.Columns("HealthInsuranceNumber")
-            Me.columnShadeID = MyBase.Columns("ShadeID")
-            Me.columnPhone = MyBase.Columns("Phone")
-            Me.columnEmail = MyBase.Columns("Email")
+            Me.columnItemTypeID = MyBase.Columns("ItemTypeID")
+            Me.columnItemType = MyBase.Columns("ItemType")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnPatientID = New Global.System.Data.DataColumn("PatientID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPatientID)
-            Me.columnName = New Global.System.Data.DataColumn("Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnName)
-            Me.columnBirthDate = New Global.System.Data.DataColumn("BirthDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnBirthDate)
-            Me.columnHealthInsuranceNumber = New Global.System.Data.DataColumn("HealthInsuranceNumber", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHealthInsuranceNumber)
-            Me.columnShadeID = New Global.System.Data.DataColumn("ShadeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnShadeID)
-            Me.columnPhone = New Global.System.Data.DataColumn("Phone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPhone)
-            Me.columnEmail = New Global.System.Data.DataColumn("Email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEmail)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPatientID}, true))
-            Me.columnPatientID.AutoIncrement = true
-            Me.columnPatientID.AutoIncrementSeed = -1
-            Me.columnPatientID.AutoIncrementStep = -1
-            Me.columnPatientID.AllowDBNull = false
-            Me.columnPatientID.ReadOnly = true
-            Me.columnPatientID.Unique = true
-            Me.columnName.AllowDBNull = false
-            Me.columnName.MaxLength = 1024
-            Me.columnHealthInsuranceNumber.MaxLength = 20
-            Me.columnPhone.MaxLength = 20
-            Me.columnEmail.MaxLength = 2147483647
+            Me.columnItemTypeID = New Global.System.Data.DataColumn("ItemTypeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnItemTypeID)
+            Me.columnItemType = New Global.System.Data.DataColumn("ItemType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnItemType)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnItemTypeID}, true))
+            Me.columnItemTypeID.AutoIncrement = true
+            Me.columnItemTypeID.AutoIncrementSeed = -1
+            Me.columnItemTypeID.AutoIncrementStep = -1
+            Me.columnItemTypeID.AllowDBNull = false
+            Me.columnItemTypeID.ReadOnly = true
+            Me.columnItemTypeID.Unique = true
+            Me.columnItemType.AllowDBNull = false
+            Me.columnItemType.MaxLength = 200
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewtbPatientRow() As tbPatientRow
-            Return CType(Me.NewRow,tbPatientRow)
+        Public Function NewtbItemTypeRow() As tbItemTypeRow
+            Return CType(Me.NewRow,tbItemTypeRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New tbPatientRow(builder)
+            Return New tbItemTypeRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(tbPatientRow)
+            Return GetType(tbItemTypeRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.tbPatientRowChangedEvent) Is Nothing) Then
-                RaiseEvent tbPatientRowChanged(Me, New tbPatientRowChangeEvent(CType(e.Row,tbPatientRow), e.Action))
+            If (Not (Me.tbItemTypeRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbItemTypeRowChanged(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
             End If
         End Sub
         
@@ -527,8 +459,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.tbPatientRowChangingEvent) Is Nothing) Then
-                RaiseEvent tbPatientRowChanging(Me, New tbPatientRowChangeEvent(CType(e.Row,tbPatientRow), e.Action))
+            If (Not (Me.tbItemTypeRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbItemTypeRowChanging(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
             End If
         End Sub
         
@@ -536,8 +468,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.tbPatientRowDeletedEvent) Is Nothing) Then
-                RaiseEvent tbPatientRowDeleted(Me, New tbPatientRowChangeEvent(CType(e.Row,tbPatientRow), e.Action))
+            If (Not (Me.tbItemTypeRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbItemTypeRowDeleted(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
             End If
         End Sub
         
@@ -545,14 +477,14 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.tbPatientRowDeletingEvent) Is Nothing) Then
-                RaiseEvent tbPatientRowDeleting(Me, New tbPatientRowChangeEvent(CType(e.Row,tbPatientRow), e.Action))
+            If (Not (Me.tbItemTypeRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbItemTypeRowDeleting(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemovetbPatientRow(ByVal row As tbPatientRow)
+        Public Sub RemovetbItemTypeRow(ByVal row As tbItemTypeRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -579,7 +511,7 @@ Partial Public Class DataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "tbPatientDataTable"
+            attribute2.FixedValue = "tbItemTypeDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -626,190 +558,55 @@ Partial Public Class DataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class tbPatientRow
+    Partial Public Class tbItemTypeRow
         Inherits Global.System.Data.DataRow
         
-        Private tabletbPatient As tbPatientDataTable
+        Private tabletbItemType As tbItemTypeDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabletbPatient = CType(Me.Table,tbPatientDataTable)
+            Me.tabletbItemType = CType(Me.Table,tbItemTypeDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property PatientID() As Integer
+        Public Property ItemTypeID() As Integer
             Get
-                Return CType(Me(Me.tabletbPatient.PatientIDColumn),Integer)
+                Return CType(Me(Me.tabletbItemType.ItemTypeIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbPatient.PatientIDColumn) = value
+                Me(Me.tabletbItemType.ItemTypeIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Name() As String
+        Public Property ItemType() As String
             Get
-                Return CType(Me(Me.tabletbPatient.NameColumn),String)
+                Return CType(Me(Me.tabletbItemType.ItemTypeColumn),String)
             End Get
             Set
-                Me(Me.tabletbPatient.NameColumn) = value
+                Me(Me.tabletbItemType.ItemTypeColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property BirthDate() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tabletbPatient.BirthDateColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'BirthDate' in table 'tbPatient' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tabletbPatient.BirthDateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property HealthInsuranceNumber() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tabletbPatient.HealthInsuranceNumberColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'HealthInsuranceNumber' in table 'tbPatient' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tabletbPatient.HealthInsuranceNumberColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ShadeID() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tabletbPatient.ShadeIDColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ShadeID' in table 'tbPatient' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tabletbPatient.ShadeIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Phone() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tabletbPatient.PhoneColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Phone' in table 'tbPatient' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tabletbPatient.PhoneColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Email() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tabletbPatient.EmailColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Email' in table 'tbPatient' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tabletbPatient.EmailColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsBirthDateNull() As Boolean
-            Return Me.IsNull(Me.tabletbPatient.BirthDateColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetBirthDateNull()
-            Me(Me.tabletbPatient.BirthDateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsHealthInsuranceNumberNull() As Boolean
-            Return Me.IsNull(Me.tabletbPatient.HealthInsuranceNumberColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetHealthInsuranceNumberNull()
-            Me(Me.tabletbPatient.HealthInsuranceNumberColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsShadeIDNull() As Boolean
-            Return Me.IsNull(Me.tabletbPatient.ShadeIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetShadeIDNull()
-            Me(Me.tabletbPatient.ShadeIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsPhoneNull() As Boolean
-            Return Me.IsNull(Me.tabletbPatient.PhoneColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetPhoneNull()
-            Me(Me.tabletbPatient.PhoneColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsEmailNull() As Boolean
-            Return Me.IsNull(Me.tabletbPatient.EmailColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetEmailNull()
-            Me(Me.tabletbPatient.EmailColumn) = Global.System.Convert.DBNull
-        End Sub
     End Class
     
     '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class tbPatientRowChangeEvent
+    Public Class tbItemTypeRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As tbPatientRow
+        Private eventRow As tbItemTypeRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As tbPatientRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As tbItemTypeRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -817,7 +614,7 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As tbPatientRow
+        Public ReadOnly Property Row() As tbItemTypeRow
             Get
                 Return Me.eventRow
             End Get
@@ -844,7 +641,7 @@ Namespace DataSet1TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class tbPatientTableAdapter
+    Partial Public Class tbItemTypeTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -961,78 +758,33 @@ Namespace DataSet1TableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "tbPatient"
-            tableMapping.ColumnMappings.Add("PatientID", "PatientID")
-            tableMapping.ColumnMappings.Add("Name", "Name")
-            tableMapping.ColumnMappings.Add("BirthDate", "BirthDate")
-            tableMapping.ColumnMappings.Add("HealthInsuranceNumber", "HealthInsuranceNumber")
-            tableMapping.ColumnMappings.Add("ShadeID", "ShadeID")
-            tableMapping.ColumnMappings.Add("Phone", "Phone")
-            tableMapping.ColumnMappings.Add("Email", "Email")
+            tableMapping.DataSetTable = "tbItemType"
+            tableMapping.ColumnMappings.Add("ItemTypeID", "ItemTypeID")
+            tableMapping.ColumnMappings.Add("ItemType", "ItemType")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbPatient] WHERE (([PatientID] = @Original_PatientID) AND ([Na"& _ 
-                "me] = @Original_Name) AND ((@IsNull_BirthDate = 1 AND [BirthDate] IS NULL) OR (["& _ 
-                "BirthDate] = @Original_BirthDate)) AND ((@IsNull_HealthInsuranceNumber = 1 AND ["& _ 
-                "HealthInsuranceNumber] IS NULL) OR ([HealthInsuranceNumber] = @Original_HealthIn"& _ 
-                "suranceNumber)) AND ((@IsNull_ShadeID = 1 AND [ShadeID] IS NULL) OR ([ShadeID] ="& _ 
-                " @Original_ShadeID)) AND ((@IsNull_Phone = 1 AND [Phone] IS NULL) OR ([Phone] = "& _ 
-                "@Original_Phone)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbItemType] WHERE (([ItemTypeID] = @Original_ItemTypeID) AND ("& _ 
+                "[ItemType] = @Original_ItemType))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PatientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PatientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BirthDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BirthDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BirthDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BirthDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HealthInsuranceNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HealthInsuranceNumber", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HealthInsuranceNumber", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HealthInsuranceNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbPatient] ([Name], [BirthDate], [HealthInsuranceNumber], [Sha"& _ 
-                "deID], [Phone], [Email]) VALUES (@Name, @BirthDate, @HealthInsuranceNumber, @Sha"& _ 
-                "deID, @Phone, @Email);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PatientID, Name, BirthDate, HealthInsuranceNumber"& _ 
-                ", ShadeID, Phone, Email FROM tbPatient WHERE (PatientID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbItemType] ([ItemType]) VALUES (@ItemType);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ItemTypeI"& _ 
+                "D, ItemType FROM tbItemType WHERE (ItemTypeID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BirthDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BirthDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HealthInsuranceNumber", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HealthInsuranceNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbPatient] SET [Name] = @Name, [BirthDate] = @BirthDate, [HealthIns"& _ 
-                "uranceNumber] = @HealthInsuranceNumber, [ShadeID] = @ShadeID, [Phone] = @Phone, "& _ 
-                "[Email] = @Email WHERE (([PatientID] = @Original_PatientID) AND ([Name] = @Origi"& _ 
-                "nal_Name) AND ((@IsNull_BirthDate = 1 AND [BirthDate] IS NULL) OR ([BirthDate] ="& _ 
-                " @Original_BirthDate)) AND ((@IsNull_HealthInsuranceNumber = 1 AND [HealthInsura"& _ 
-                "nceNumber] IS NULL) OR ([HealthInsuranceNumber] = @Original_HealthInsuranceNumbe"& _ 
-                "r)) AND ((@IsNull_ShadeID = 1 AND [ShadeID] IS NULL) OR ([ShadeID] = @Original_S"& _ 
-                "hadeID)) AND ((@IsNull_Phone = 1 AND [Phone] IS NULL) OR ([Phone] = @Original_Ph"& _ 
-                "one)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PatientID, Name, BirthDate, HealthInsuranceNumber, ShadeID, Phon"& _ 
-                "e, Email FROM tbPatient WHERE (PatientID = @PatientID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbItemType] SET [ItemType] = @ItemType WHERE (([ItemTypeID] = @Orig"& _ 
+                "inal_ItemTypeID) AND ([ItemType] = @Original_ItemType));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ItemTypeID, Ite"& _ 
+                "mType FROM tbItemType WHERE (ItemTypeID = @ItemTypeID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BirthDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BirthDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HealthInsuranceNumber", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HealthInsuranceNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PatientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PatientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BirthDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BirthDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BirthDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BirthDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HealthInsuranceNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HealthInsuranceNumber", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HealthInsuranceNumber", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HealthInsuranceNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PatientID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PatientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ItemTypeID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1048,8 +800,7 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT PatientID, Name, BirthDate, HealthInsuranceNumber, ShadeID, Phone, Email F"& _ 
-                "ROM dbo.tbPatient"
+            Me._commandCollection(0).CommandText = "SELECT ItemTypeID, ItemType FROM dbo.tbItemType"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1057,7 +808,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.tbPatientDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.tbItemTypeDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1070,9 +821,9 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSet1.tbPatientDataTable
+        Public Overloads Overridable Function GetData() As DataSet1.tbItemTypeDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSet1.tbPatientDataTable = New DataSet1.tbPatientDataTable()
+            Dim dataTable As DataSet1.tbItemTypeDataTable = New DataSet1.tbItemTypeDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1080,7 +831,7 @@ Namespace DataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.tbPatientDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.tbItemTypeDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -1088,7 +839,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As DataSet1) As Integer
-            Return Me.Adapter.Update(dataSet, "tbPatient")
+            Return Me.Adapter.Update(dataSet, "tbItemType")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1109,40 +860,12 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_PatientID As Integer, ByVal Original_Name As String, ByVal Original_BirthDate As Global.System.Nullable(Of Date), ByVal Original_HealthInsuranceNumber As String, ByVal Original_ShadeID As Global.System.Nullable(Of Integer), ByVal Original_Phone As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_PatientID,Integer)
-            If (Original_Name Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Name")
+        Public Overloads Overridable Function Delete(ByVal Original_ItemTypeID As Integer, ByVal Original_ItemType As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ItemTypeID,Integer)
+            If (Original_ItemType Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_ItemType")
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Name,String)
-            End If
-            If (Original_BirthDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_BirthDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Original_HealthInsuranceNumber Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_HealthInsuranceNumber,String)
-            End If
-            If (Original_ShadeID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_ShadeID.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Phone Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_Phone,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ItemType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1163,36 +886,11 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal BirthDate As Global.System.Nullable(Of Date), ByVal HealthInsuranceNumber As String, ByVal ShadeID As Global.System.Nullable(Of Integer), ByVal Phone As String, ByVal Email As String) As Integer
-            If (Name Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Name")
+        Public Overloads Overridable Function Insert(ByVal ItemType As String) As Integer
+            If (ItemType Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ItemType")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Name,String)
-            End If
-            If (BirthDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(BirthDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (HealthInsuranceNumber Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(HealthInsuranceNumber,String)
-            End If
-            If (ShadeID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(ShadeID.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Phone Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Phone,String)
-            End If
-            If (Email Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Email,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(ItemType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1213,72 +911,19 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal BirthDate As Global.System.Nullable(Of Date), ByVal HealthInsuranceNumber As String, ByVal ShadeID As Global.System.Nullable(Of Integer), ByVal Phone As String, ByVal Email As String, ByVal Original_PatientID As Integer, ByVal Original_Name As String, ByVal Original_BirthDate As Global.System.Nullable(Of Date), ByVal Original_HealthInsuranceNumber As String, ByVal Original_ShadeID As Global.System.Nullable(Of Integer), ByVal Original_Phone As String, ByVal PatientID As Integer) As Integer
-            If (Name Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Name")
+        Public Overloads Overridable Function Update(ByVal ItemType As String, ByVal Original_ItemTypeID As Integer, ByVal Original_ItemType As String, ByVal ItemTypeID As Integer) As Integer
+            If (ItemType Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ItemType")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Name,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ItemType,String)
             End If
-            If (BirthDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(BirthDate.Value,Date)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_ItemTypeID,Integer)
+            If (Original_ItemType Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_ItemType")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_ItemType,String)
             End If
-            If (HealthInsuranceNumber Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(HealthInsuranceNumber,String)
-            End If
-            If (ShadeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ShadeID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Phone,String)
-            End If
-            If (Email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Email,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_PatientID,Integer)
-            If (Original_Name Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Name")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Name,String)
-            End If
-            If (Original_BirthDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_BirthDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (Original_HealthInsuranceNumber Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_HealthInsuranceNumber,String)
-            End If
-            If (Original_ShadeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_ShadeID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Phone,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(PatientID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ItemTypeID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1298,8 +943,8 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal BirthDate As Global.System.Nullable(Of Date), ByVal HealthInsuranceNumber As String, ByVal ShadeID As Global.System.Nullable(Of Integer), ByVal Phone As String, ByVal Email As String, ByVal Original_PatientID As Integer, ByVal Original_Name As String, ByVal Original_BirthDate As Global.System.Nullable(Of Date), ByVal Original_HealthInsuranceNumber As String, ByVal Original_ShadeID As Global.System.Nullable(Of Integer), ByVal Original_Phone As String) As Integer
-            Return Me.Update(Name, BirthDate, HealthInsuranceNumber, ShadeID, Phone, Email, Original_PatientID, Original_Name, Original_BirthDate, Original_HealthInsuranceNumber, Original_ShadeID, Original_Phone, Original_PatientID)
+        Public Overloads Overridable Function Update(ByVal ItemType As String, ByVal Original_ItemTypeID As Integer, ByVal Original_ItemType As String) As Integer
+            Return Me.Update(ItemType, Original_ItemTypeID, Original_ItemType, Original_ItemTypeID)
         End Function
     End Class
     
@@ -1316,7 +961,7 @@ Namespace DataSet1TableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _tbPatientTableAdapter As tbPatientTableAdapter
+        Private _tbItemTypeTableAdapter As tbItemTypeTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1338,12 +983,12 @@ Namespace DataSet1TableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property tbPatientTableAdapter() As tbPatientTableAdapter
+        Public Property tbItemTypeTableAdapter() As tbItemTypeTableAdapter
             Get
-                Return Me._tbPatientTableAdapter
+                Return Me._tbItemTypeTableAdapter
             End Get
             Set
-                Me._tbPatientTableAdapter = value
+                Me._tbItemTypeTableAdapter = value
             End Set
         End Property
         
@@ -1366,9 +1011,9 @@ Namespace DataSet1TableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._tbPatientTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._tbPatientTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._tbPatientTableAdapter.Connection
+                If ((Not (Me._tbItemTypeTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbItemTypeTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbItemTypeTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1383,7 +1028,7 @@ Namespace DataSet1TableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._tbPatientTableAdapter) Is Nothing) Then
+                If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1397,12 +1042,12 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPatientTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbPatient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbItemType.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tbPatientTableAdapter.Update(updatedRows))
+                    result = (result + Me._tbItemTypeTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1416,11 +1061,11 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPatientTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbPatient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbItemType.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tbPatientTableAdapter.Update(addedRows))
+                    result = (result + Me._tbItemTypeTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1434,11 +1079,11 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPatientTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbPatient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbItemType.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tbPatientTableAdapter.Update(deletedRows))
+                    result = (result + Me._tbItemTypeTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1483,8 +1128,8 @@ Namespace DataSet1TableAdapters
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._tbPatientTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._tbPatientTableAdapter.Connection) = false)) Then
+            If ((Not (Me._tbItemTypeTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbItemTypeTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1520,13 +1165,13 @@ Namespace DataSet1TableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._tbPatientTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._tbPatientTableAdapter, Me._tbPatientTableAdapter.Connection)
-                    Me._tbPatientTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbPatientTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._tbPatientTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._tbPatientTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbPatientTableAdapter.Adapter)
+                If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbItemTypeTableAdapter, Me._tbItemTypeTableAdapter.Connection)
+                    Me._tbItemTypeTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbItemTypeTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tbItemTypeTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbItemTypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbItemTypeTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1589,9 +1234,9 @@ Namespace DataSet1TableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._tbPatientTableAdapter) Is Nothing) Then
-                    Me._tbPatientTableAdapter.Connection = CType(revertConnections(Me._tbPatientTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbPatientTableAdapter.Transaction = Nothing
+                If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
+                    Me._tbItemTypeTableAdapter.Connection = CType(revertConnections(Me._tbItemTypeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbItemTypeTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

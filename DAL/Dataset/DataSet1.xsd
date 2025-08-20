@@ -14,47 +14,7 @@
   </xs:annotation>
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1">
     <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbDoctor" msprop:Generator_RowClassName="tbDoctorRow" msprop:Generator_RowEvHandlerName="tbDoctorRowChangeEventHandler" msprop:Generator_RowDeletedName="tbDoctorRowDeleted" msprop:Generator_RowDeletingName="tbDoctorRowDeleting" msprop:Generator_RowEvArgName="tbDoctorRowChangeEvent" msprop:Generator_TablePropName="tbDoctor" msprop:Generator_RowChangedName="tbDoctorRowChanged" msprop:Generator_UserTableName="tbDoctor" msprop:Generator_RowChangingName="tbDoctorRowChanging" msprop:Generator_TableClassName="tbDoctorDataTable" msprop:Generator_TableVarName="tabletbDoctor">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="DoctorID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="DoctorID" msprop:Generator_ColumnPropNameInTable="DoctorIDColumn" msprop:Generator_ColumnPropNameInRow="DoctorID" msprop:Generator_ColumnVarNameInTable="columnDoctorID" type="xs:int" />
-              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1024" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NickName" msprop:Generator_UserColumnName="NickName" msprop:Generator_ColumnPropNameInTable="NickNameColumn" msprop:Generator_ColumnPropNameInRow="NickName" msprop:Generator_ColumnVarNameInTable="columnNickName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1024" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Phone" msprop:Generator_UserColumnName="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded" />
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:tbDoctor" />
-      <xs:field xpath="mstns:DoctorID" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

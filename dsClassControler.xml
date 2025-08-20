@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="yes"?>
+<dsClassControler xmlns="http://tempuri.org/dsClassControler.xsd">
+  <tbClassControler>
+    <ClassName>\DAL\Table\stbUser.vb</ClassName>
+  </tbClassControler>
+  <tbClassControler>
+    <ClassName>Table\stbUser</ClassName>
+  </tbClassControler>
+  <tbClassControler>
+    <ClassName>Table\rsp_UserRole</ClassName>
+  </tbClassControler>
+  <tbControlerMethod>
+    <ClassName>Table\rsp_UserRole</ClassName>
+    <MethodName>Fill</MethodName>
+  </tbControlerMethod>
+  <tbControlerMethod>
+    <ClassName>Table\stbUser</ClassName>
+    <MethodName>Fill</MethodName>
+    <ControlerMethod>GetAll</ControlerMethod>
+  </tbControlerMethod>
+  <tbControlerMethod>
+    <ClassName>Table\stbUser</ClassName>
+    <MethodName>Fill1</MethodName>
+    <ControlerMethod>GetCurrent</ControlerMethod>
+  </tbControlerMethod>
+</dsClassControler>

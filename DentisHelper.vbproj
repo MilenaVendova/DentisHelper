@@ -117,9 +117,6 @@
     <Compile Include="DAL\Table\tbDoctor.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\Table\tbTechnician.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="frmCodeGenerator.designer.vb">
       <DependentUpon>frmCodeGenerator.vb</DependentUpon>
     </Compile>

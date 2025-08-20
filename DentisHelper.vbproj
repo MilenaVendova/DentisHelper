@@ -87,7 +87,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="TrierraSoft.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d7e98ad5fd21eb4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TFSC\TrierraSoft.NET\bin\Debug\TrierraSoft.NET.dll</HintPath>
+      <HintPath>.\TrierraSoft.NET.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dsClassControler.xml" />
+    <Content Include="TrierraSoft.NET.dll" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -215,6 +216,9 @@
   <ItemGroup>
     <Folder Include="DAL\Command\" />
     <Folder Include="Forms\UAR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

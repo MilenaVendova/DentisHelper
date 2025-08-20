@@ -5,7 +5,6 @@ Imports System.Data.SqlClient
 Imports System.Reflection.Emit
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Serialization
-'test
 Public Class frmCodeGenerator
     Private _ProjectPath As String
     Private _XMLPath As String

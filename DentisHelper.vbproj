@@ -204,7 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dsClassControler.xml" />
-    <Content Include="LoginDic.xml" />
+    <Content Include="LoginDic.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TrierraSoft.NET.dll" />
   </ItemGroup>
   <ItemGroup>

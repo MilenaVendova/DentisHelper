@@ -1,0 +1,626 @@
+<?xml version="1.0" standalone="yes"?>
+<dsDictionary xmlns="http://tempuri.org/dsDictionary.xsd">
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>server</WordID>
+    <Word>Сървър</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>name</WordID>
+    <Word>Име</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>password</WordID>
+    <Word>Парола</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>name of server</WordID>
+    <Word>Име на сървъра</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Connect to server</WordID>
+    <Word>Връзка със сървъра</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Cancel</WordID>
+    <Word>Отказ</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>OK</WordID>
+    <Word>Добре</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Windows Authentication</WordID>
+    <Word>Име и парола от Windows</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>SQL Server Authentication</WordID>
+    <Word>Въвеждай име и парола</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Card Authentication</WordID>
+    <Word>Вход с карта</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Authentication </WordID>
+    <Word>Връзка</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>More &gt;&gt;</WordID>
+    <Word>Повече &gt;&gt;</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>More &lt;&lt;</WordID>
+    <Word>Повече &lt;&lt;</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Database</WordID>
+    <Word>База данни</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Advanced ...</WordID>
+    <Word>Разширено ...</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Advanced settings.</WordID>
+    <Word>Разширени настройки.</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Save password</WordID>
+    <Word>Запази парола</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Language</WordID>
+    <Word>Език</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>server</WordID>
+    <Word>Сервер</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>name</WordID>
+    <Word>Имя</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>password</WordID>
+    <Word>Пароль</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>name of server</WordID>
+    <Word>Имя сервера</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Connect to server</WordID>
+    <Word>Связь с сервером</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Cancel</WordID>
+    <Word>Отказ</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>OK</WordID>
+    <Word>Хорошо</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Windows Authentication</WordID>
+    <Word>Имя и пароль из Windows</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>SQL Server Authentication</WordID>
+    <Word>Ввести има и пароль</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Authentication </WordID>
+    <Word>Связь</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>More &gt;&gt;</WordID>
+    <Word>Больше &gt;&gt;</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>More &lt;&lt;</WordID>
+    <Word>Больше &lt;&lt;</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Database</WordID>
+    <Word>База данных</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Advanced ...</WordID>
+    <Word>Разширенное ...</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Advanced settings.</WordID>
+    <Word>Разширеные настройки.</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Save password</WordID>
+    <Word>Сохранить пароль</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Language</WordID>
+    <Word>Язык</Word>
+    <ChName />
+    <ChDate />
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>server</WordID>
+    <Word>Server</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>name</WordID>
+    <Word>Isim</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>password</WordID>
+    <Word>Şifre</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>name of server</WordID>
+    <Word>Server adı</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Connect to server</WordID>
+    <Word>Server bağlanmak</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Cancel</WordID>
+    <Word>İptal</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>OK</WordID>
+    <Word>Tamam</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Windows Authentication</WordID>
+    <Word>Windows Authentication</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>SQL Server Authentication</WordID>
+    <Word>SQL Server Authentication</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Authentication</WordID>
+    <Word>Authentication</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>More &gt;&gt;</WordID>
+    <Word>Devamı &gt;&gt;</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>More &lt;&lt;</WordID>
+    <Word>Devamı &lt;&lt;</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Database</WordID>
+    <Word>Database</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Advanced ...</WordID>
+    <Word>Advanced ...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Advanced settings.</WordID>
+    <Word>Advanced settings.</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Save password</WordID>
+    <Word>Parolayı kaydetmek</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>4</LanguageID>
+    <WordID>Language</WordID>
+    <Word>Dil</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Add</WordID>
+    <Word>Добави</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Remove</WordID>
+    <Word>Премахни</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Server list</WordID>
+    <Word>Списък със сървъри</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Server exists</WordID>
+    <Word>Сървъра съществува</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Server already exists.</WordID>
+    <Word>Сървъра вече съществува.</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>About {0}</WordID>
+    <Word>Относно {0}</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Support phone : {0}</WordID>
+    <Word>Телефон за контакти : {0}</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>You do not have a setting for network repository . Would you like to add this setting?</WordID>
+    <Word>Нямате настройка за мрежова папка за версии. Желаете ли да добавите?</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Choose network repository folder</WordID>
+    <Word>Изберете мрежова папка за версии на програмата</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Question</WordID>
+    <Word>Въпрос</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Change</WordID>
+    <Word>Смени</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Check</WordID>
+    <Word>Провери</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Change network repository</WordID>
+    <Word>Смени мрежовата папка за версии на програмата</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Remove network repository</WordID>
+    <Word>Премахни мрежовата папка за версии на програмата</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Network repository</WordID>
+    <Word>Мрежова папка</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Please wait! Estimated time left {0} seconds.</WordID>
+    <Word>Моля изчакайте! Оставащо време {0} секунди.</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Getting version from network repository...</WordID>
+    <Word>Вземам версия от мрежовата папка...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Progress</WordID>
+    <Word>Прогрес</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Updating local version...</WordID>
+    <Word>Обновяване на локалната версия...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Starting Premier.Net...</WordID>
+    <Word>Стартирам Premier.Net...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>Getting version from server...</WordID>
+    <Word>Вземам версия от сървъра...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>
+      The network repository is updating at the moment.
+      You have two options :
+      1. You can wait until time expires or click 'Check' to force the update procedure.
+      2. Click 'Cancel' to terminate the update procedure.
+    </WordID>
+    <Word>
+      Мрежовата папка в момента се обновява.
+      Имате две възможности :
+      1. Можете да изчакате да изтече времето или да натиснете 'Провери'.
+      2.Ако тази грешка се появи отново се свържете с вашия системен администратор.
+    </Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>
+      An unexpected error occured during program update procedure. To solve the problem :
+      1.Try running this application again.
+      2.If this error message is displayed again contact your system administrator.
+    </WordID>
+    <Word>
+      Възникна неочаквана грешка при изпълнението на процедурата по обновяване на програмата. За да разрешите проблема :
+      1.Пробвайте да стартирате тази програма отново.
+      2.Ако тази грешка се появи отново се свържете с вашия системен администратор.
+    </Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>1</LanguageID>
+    <WordID>The card is not validated.</WordID>
+    <Word>Картата не е валидирана.</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Add</WordID>
+    <Word>Добавть</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Remove</WordID>
+    <Word>Удалить</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Server list</WordID>
+    <Word>Списък със сървъри</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Server exists</WordID>
+    <Word>Сървъра съществува</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Server already exists.</WordID>
+    <Word>Сървъра вече съществува.</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>About {0}</WordID>
+    <Word>Касательно {0}</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Support phone : {0}</WordID>
+    <Word>Телефон для контактов: {0}</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>You do not have a setting for network repository . Would you like to add this setting?</WordID>
+    <Word>Нямате настройка за мрежова папка за версии. Желаете ли да добавите?</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Choose network repository folder</WordID>
+    <Word>Изберете мрежова папка за версии на програмата</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Question</WordID>
+    <Word>Вопрос?</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Change</WordID>
+    <Word>Изменения</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Check</WordID>
+    <Word>Провери</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Change network repository</WordID>
+    <Word>Смени мрежовата папка за версии на програмата</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Remove network repository</WordID>
+    <Word>Премахни мрежовата папка за версии на програмата</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Network repository</WordID>
+    <Word>Мрежова папка</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Please wait! Estimated time left {0} seconds.</WordID>
+    <Word>Моля изчакайте! Оставащо време {0} секунди.</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Getting version from network repository...</WordID>
+    <Word>Вземам версия от мрежовата папка...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Progress</WordID>
+    <Word>Прогрес</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Updating local version...</WordID>
+    <Word>Обновяване на локалната версия...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Starting Premier.Net...</WordID>
+    <Word>Стартирам Premier.Net...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>Getting version from server...</WordID>
+    <Word>Вземам версия от сървъра...</Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>
+      The network repository is updating at the moment.
+      You have two options :
+      1. You can wait until time expires or click 'Check' to force the update procedure.
+      2. Click 'Cancel' to terminate the update procedure.
+    </WordID>
+    <Word>
+      Мрежовата папка в момента се обновява.
+      Имате две възможности :
+      1. Можете да изчакате да изтече времето или да натиснете 'Провери'.
+      2.Ако тази грешка се появи отново се свържете с вашия системен администратор.
+    </Word>
+  </stbDictionary>
+  <stbDictionary>
+    <LanguageID>2</LanguageID>
+    <WordID>
+      An unexpected error occured during program update procedure. To solve the problem :
+      1.Try running this application again.
+      2.If this error message is displayed again contact your system administrator.
+    </WordID>
+    <Word>
+      Възникна неочаквана грешка при изпълнението на процедурата по обновяване на програмата. За да разрешите проблема :
+      1.Пробвайте да стартирате тази програма отново.
+      2.Ако тази грешка се появи отново се свържете с вашия системен администратор.
+    </Word>
+  </stbDictionary>
+  <stbLanguage>
+    <LanguageID>0</LanguageID>
+    <Name>English</Name>
+    <ChName />
+    <ChDate />
+  </stbLanguage>
+  <stbLanguage>
+    <LanguageID>1</LanguageID>
+    <Name>Български</Name>
+    <ChName />
+    <ChDate />
+  </stbLanguage>
+  <stbLanguage>
+    <LanguageID>2</LanguageID>
+    <Name>Руский</Name>
+    <ChName />
+    <ChDate />
+  </stbLanguage>
+  <stbLanguage>
+    <LanguageID>4</LanguageID>
+    <Name>Turkish</Name>
+  </stbLanguage>
+</dsDictionary>

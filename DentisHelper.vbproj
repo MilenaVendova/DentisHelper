@@ -204,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dsClassControler.xml" />
+    <Content Include="LoginDic.xml" />
     <Content Include="TrierraSoft.NET.dll" />
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,7 @@ Option Explicit On
 Partial Public Class DataSet1
     Inherits Global.System.Data.DataSet
     
-    Private tabletbItemType As tbItemTypeDataTable
+    Private tabletbMessage As tbMessageDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class DataSet1
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("tbItemType")) Is Nothing) Then
-                MyBase.Tables.Add(New tbItemTypeDataTable(ds.Tables("tbItemType")))
+            If (Not (ds.Tables("tbMessage")) Is Nothing) Then
+                MyBase.Tables.Add(New tbMessageDataTable(ds.Tables("tbMessage")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class DataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property tbItemType() As tbItemTypeDataTable
+    Public ReadOnly Property tbMessage() As tbMessageDataTable
         Get
-            Return Me.tabletbItemType
+            Return Me.tabletbMessage
         End Get
     End Property
     
@@ -153,8 +153,8 @@ Partial Public Class DataSet1
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("tbItemType")) Is Nothing) Then
-                MyBase.Tables.Add(New tbItemTypeDataTable(ds.Tables("tbItemType")))
+            If (Not (ds.Tables("tbMessage")) Is Nothing) Then
+                MyBase.Tables.Add(New tbMessageDataTable(ds.Tables("tbMessage")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class DataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tabletbItemType = CType(MyBase.Tables("tbItemType"),tbItemTypeDataTable)
+        Me.tabletbMessage = CType(MyBase.Tables("tbMessage"),tbMessageDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabletbItemType) Is Nothing) Then
-                Me.tabletbItemType.InitVars
+            If (Not (Me.tabletbMessage) Is Nothing) Then
+                Me.tabletbMessage.InitVars
             End If
         End If
     End Sub
@@ -204,13 +204,13 @@ Partial Public Class DataSet1
         Me.Namespace = "http://tempuri.org/DataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tabletbItemType = New tbItemTypeDataTable()
-        MyBase.Tables.Add(Me.tabletbItemType)
+        Me.tabletbMessage = New tbMessageDataTable()
+        MyBase.Tables.Add(Me.tabletbMessage)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializetbItemType() As Boolean
+    Private Function ShouldSerializetbMessage() As Boolean
         Return false
     End Function
     
@@ -273,25 +273,37 @@ Partial Public Class DataSet1
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub tbItemTypeRowChangeEventHandler(ByVal sender As Object, ByVal e As tbItemTypeRowChangeEvent)
+    Public Delegate Sub tbMessageRowChangeEventHandler(ByVal sender As Object, ByVal e As tbMessageRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class tbItemTypeDataTable
-        Inherits Global.System.Data.TypedTableBase(Of tbItemTypeRow)
+    Partial Public Class tbMessageDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbMessageRow)
         
-        Private columnItemTypeID As Global.System.Data.DataColumn
+        Private columnMessageID As Global.System.Data.DataColumn
         
-        Private columnItemType As Global.System.Data.DataColumn
+        Private columnRecieverID As Global.System.Data.DataColumn
+        
+        Private columnSenderID As Global.System.Data.DataColumn
+        
+        Private columnCaseID As Global.System.Data.DataColumn
+        
+        Private columnmessage As Global.System.Data.DataColumn
+        
+        Private columndate As Global.System.Data.DataColumn
+        
+        Private columnReaded As Global.System.Data.DataColumn
+        
+        Private columnIsFile As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "tbItemType"
+            Me.TableName = "tbMessage"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -324,17 +336,65 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ItemTypeIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property MessageIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnItemTypeID
+                Return Me.columnMessageID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ItemTypeColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property RecieverIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnItemType
+                Return Me.columnRecieverID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property SenderIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSenderID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property CaseIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCaseID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property messageColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnmessage
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property dateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property ReadedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnReaded
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property IsFileColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIsFile
             End Get
         End Property
         
@@ -349,50 +409,50 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As tbItemTypeRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbMessageRow
             Get
-                Return CType(Me.Rows(index),tbItemTypeRow)
+                Return CType(Me.Rows(index),tbMessageRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbItemTypeRowChanging As tbItemTypeRowChangeEventHandler
+        Public Event tbMessageRowChanging As tbMessageRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbItemTypeRowChanged As tbItemTypeRowChangeEventHandler
+        Public Event tbMessageRowChanged As tbMessageRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbItemTypeRowDeleting As tbItemTypeRowChangeEventHandler
+        Public Event tbMessageRowDeleting As tbMessageRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbItemTypeRowDeleted As tbItemTypeRowChangeEventHandler
+        Public Event tbMessageRowDeleted As tbMessageRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddtbItemTypeRow(ByVal row As tbItemTypeRow)
+        Public Overloads Sub AddtbMessageRow(ByVal row As tbMessageRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddtbItemTypeRow(ByVal ItemType As String) As tbItemTypeRow
-            Dim rowtbItemTypeRow As tbItemTypeRow = CType(Me.NewRow,tbItemTypeRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, ItemType}
-            rowtbItemTypeRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowtbItemTypeRow)
-            Return rowtbItemTypeRow
+        Public Overloads Function AddtbMessageRow(ByVal RecieverID As Integer, ByVal SenderID As Integer, ByVal CaseID As Integer, ByVal message As String, ByVal _date As Date, ByVal Readed As Boolean, ByVal IsFile As Boolean) As tbMessageRow
+            Dim rowtbMessageRow As tbMessageRow = CType(Me.NewRow,tbMessageRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, RecieverID, SenderID, CaseID, message, _date, Readed, IsFile}
+            rowtbMessageRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbMessageRow)
+            Return rowtbMessageRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByItemTypeID(ByVal ItemTypeID As Integer) As tbItemTypeRow
-            Return CType(Me.Rows.Find(New Object() {ItemTypeID}),tbItemTypeRow)
+        Public Function FindByMessageID(ByVal MessageID As Integer) As tbMessageRow
+            Return CType(Me.Rows.Find(New Object() {MessageID}),tbMessageRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As tbItemTypeDataTable = CType(MyBase.Clone,tbItemTypeDataTable)
+            Dim cln As tbMessageDataTable = CType(MyBase.Clone,tbMessageDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -400,58 +460,83 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New tbItemTypeDataTable()
+            Return New tbMessageDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnItemTypeID = MyBase.Columns("ItemTypeID")
-            Me.columnItemType = MyBase.Columns("ItemType")
+            Me.columnMessageID = MyBase.Columns("MessageID")
+            Me.columnRecieverID = MyBase.Columns("RecieverID")
+            Me.columnSenderID = MyBase.Columns("SenderID")
+            Me.columnCaseID = MyBase.Columns("CaseID")
+            Me.columnmessage = MyBase.Columns("message")
+            Me.columndate = MyBase.Columns("date")
+            Me.columnReaded = MyBase.Columns("Readed")
+            Me.columnIsFile = MyBase.Columns("IsFile")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnItemTypeID = New Global.System.Data.DataColumn("ItemTypeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnItemTypeID)
-            Me.columnItemType = New Global.System.Data.DataColumn("ItemType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnItemType)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnItemTypeID}, true))
-            Me.columnItemTypeID.AutoIncrement = true
-            Me.columnItemTypeID.AutoIncrementSeed = -1
-            Me.columnItemTypeID.AutoIncrementStep = -1
-            Me.columnItemTypeID.AllowDBNull = false
-            Me.columnItemTypeID.ReadOnly = true
-            Me.columnItemTypeID.Unique = true
-            Me.columnItemType.AllowDBNull = false
-            Me.columnItemType.MaxLength = 200
+            Me.columnMessageID = New Global.System.Data.DataColumn("MessageID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMessageID)
+            Me.columnRecieverID = New Global.System.Data.DataColumn("RecieverID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRecieverID)
+            Me.columnSenderID = New Global.System.Data.DataColumn("SenderID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSenderID)
+            Me.columnCaseID = New Global.System.Data.DataColumn("CaseID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCaseID)
+            Me.columnmessage = New Global.System.Data.DataColumn("message", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmessage)
+            Me.columndate = New Global.System.Data.DataColumn("date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            Me.columndate.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "dateColumn")
+            Me.columndate.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columndate")
+            Me.columndate.ExtendedProperties.Add("Generator_UserColumnName", "date")
+            MyBase.Columns.Add(Me.columndate)
+            Me.columnReaded = New Global.System.Data.DataColumn("Readed", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnReaded)
+            Me.columnIsFile = New Global.System.Data.DataColumn("IsFile", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIsFile)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnMessageID}, true))
+            Me.columnMessageID.AutoIncrement = true
+            Me.columnMessageID.AutoIncrementSeed = -1
+            Me.columnMessageID.AutoIncrementStep = -1
+            Me.columnMessageID.AllowDBNull = false
+            Me.columnMessageID.ReadOnly = true
+            Me.columnMessageID.Unique = true
+            Me.columnSenderID.AllowDBNull = false
+            Me.columnmessage.AllowDBNull = false
+            Me.columnmessage.MaxLength = 1024
+            Me.columndate.AllowDBNull = false
+            Me.columnReaded.AllowDBNull = false
+            Me.columnIsFile.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewtbItemTypeRow() As tbItemTypeRow
-            Return CType(Me.NewRow,tbItemTypeRow)
+        Public Function NewtbMessageRow() As tbMessageRow
+            Return CType(Me.NewRow,tbMessageRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New tbItemTypeRow(builder)
+            Return New tbMessageRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(tbItemTypeRow)
+            Return GetType(tbMessageRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.tbItemTypeRowChangedEvent) Is Nothing) Then
-                RaiseEvent tbItemTypeRowChanged(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
+            If (Not (Me.tbMessageRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbMessageRowChanged(Me, New tbMessageRowChangeEvent(CType(e.Row,tbMessageRow), e.Action))
             End If
         End Sub
         
@@ -459,8 +544,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.tbItemTypeRowChangingEvent) Is Nothing) Then
-                RaiseEvent tbItemTypeRowChanging(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
+            If (Not (Me.tbMessageRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbMessageRowChanging(Me, New tbMessageRowChangeEvent(CType(e.Row,tbMessageRow), e.Action))
             End If
         End Sub
         
@@ -468,8 +553,8 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.tbItemTypeRowDeletedEvent) Is Nothing) Then
-                RaiseEvent tbItemTypeRowDeleted(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
+            If (Not (Me.tbMessageRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbMessageRowDeleted(Me, New tbMessageRowChangeEvent(CType(e.Row,tbMessageRow), e.Action))
             End If
         End Sub
         
@@ -477,14 +562,14 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.tbItemTypeRowDeletingEvent) Is Nothing) Then
-                RaiseEvent tbItemTypeRowDeleting(Me, New tbItemTypeRowChangeEvent(CType(e.Row,tbItemTypeRow), e.Action))
+            If (Not (Me.tbMessageRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbMessageRowDeleting(Me, New tbMessageRowChangeEvent(CType(e.Row,tbMessageRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemovetbItemTypeRow(ByVal row As tbItemTypeRow)
+        Public Sub RemovetbMessageRow(ByVal row As tbMessageRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -511,7 +596,7 @@ Partial Public Class DataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "tbItemTypeDataTable"
+            attribute2.FixedValue = "tbMessageDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -558,55 +643,153 @@ Partial Public Class DataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class tbItemTypeRow
+    Partial Public Class tbMessageRow
         Inherits Global.System.Data.DataRow
         
-        Private tabletbItemType As tbItemTypeDataTable
+        Private tabletbMessage As tbMessageDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabletbItemType = CType(Me.Table,tbItemTypeDataTable)
+            Me.tabletbMessage = CType(Me.Table,tbMessageDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ItemTypeID() As Integer
+        Public Property MessageID() As Integer
             Get
-                Return CType(Me(Me.tabletbItemType.ItemTypeIDColumn),Integer)
+                Return CType(Me(Me.tabletbMessage.MessageIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbItemType.ItemTypeIDColumn) = value
+                Me(Me.tabletbMessage.MessageIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ItemType() As String
+        Public Property RecieverID() As Integer
             Get
-                Return CType(Me(Me.tabletbItemType.ItemTypeColumn),String)
+                Try 
+                    Return CType(Me(Me.tabletbMessage.RecieverIDColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RecieverID' in table 'tbMessage' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tabletbItemType.ItemTypeColumn) = value
+                Me(Me.tabletbMessage.RecieverIDColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property SenderID() As Integer
+            Get
+                Return CType(Me(Me.tabletbMessage.SenderIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletbMessage.SenderIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property CaseID() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbMessage.CaseIDColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CaseID' in table 'tbMessage' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbMessage.CaseIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property message() As String
+            Get
+                Return CType(Me(Me.tabletbMessage.messageColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbMessage.messageColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property _date() As Date
+            Get
+                Return CType(Me(Me.tabletbMessage.dateColumn),Date)
+            End Get
+            Set
+                Me(Me.tabletbMessage.dateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Readed() As Boolean
+            Get
+                Return CType(Me(Me.tabletbMessage.ReadedColumn),Boolean)
+            End Get
+            Set
+                Me(Me.tabletbMessage.ReadedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property IsFile() As Boolean
+            Get
+                Return CType(Me(Me.tabletbMessage.IsFileColumn),Boolean)
+            End Get
+            Set
+                Me(Me.tabletbMessage.IsFileColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsRecieverIDNull() As Boolean
+            Return Me.IsNull(Me.tabletbMessage.RecieverIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetRecieverIDNull()
+            Me(Me.tabletbMessage.RecieverIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsCaseIDNull() As Boolean
+            Return Me.IsNull(Me.tabletbMessage.CaseIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetCaseIDNull()
+            Me(Me.tabletbMessage.CaseIDColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class tbItemTypeRowChangeEvent
+    Public Class tbMessageRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As tbItemTypeRow
+        Private eventRow As tbMessageRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As tbItemTypeRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As tbMessageRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -614,7 +797,7 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As tbItemTypeRow
+        Public ReadOnly Property Row() As tbMessageRow
             Get
                 Return Me.eventRow
             End Get
@@ -641,7 +824,7 @@ Namespace DataSet1TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class tbItemTypeTableAdapter
+    Partial Public Class tbMessageTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -758,33 +941,79 @@ Namespace DataSet1TableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "tbItemType"
-            tableMapping.ColumnMappings.Add("ItemTypeID", "ItemTypeID")
-            tableMapping.ColumnMappings.Add("ItemType", "ItemType")
+            tableMapping.DataSetTable = "tbMessage"
+            tableMapping.ColumnMappings.Add("MessageID", "MessageID")
+            tableMapping.ColumnMappings.Add("RecieverID", "RecieverID")
+            tableMapping.ColumnMappings.Add("SenderID", "SenderID")
+            tableMapping.ColumnMappings.Add("CaseID", "CaseID")
+            tableMapping.ColumnMappings.Add("message", "message")
+            tableMapping.ColumnMappings.Add("date", "date")
+            tableMapping.ColumnMappings.Add("Readed", "Readed")
+            tableMapping.ColumnMappings.Add("IsFile", "IsFile")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbItemType] WHERE (([ItemTypeID] = @Original_ItemTypeID) AND ("& _ 
-                "[ItemType] = @Original_ItemType))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbMessage] WHERE (([MessageID] = @Original_MessageID) AND ((@I"& _ 
+                "sNull_RecieverID = 1 AND [RecieverID] IS NULL) OR ([RecieverID] = @Original_Reci"& _ 
+                "everID)) AND ([SenderID] = @Original_SenderID) AND ((@IsNull_CaseID = 1 AND [Cas"& _ 
+                "eID] IS NULL) OR ([CaseID] = @Original_CaseID)) AND ([message] = @Original_messa"& _ 
+                "ge) AND ([date] = @Original_date) AND ([Readed] = @Original_Readed) AND ([IsFile"& _ 
+                "] = @Original_IsFile))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MessageID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MessageID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RecieverID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RecieverID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RecieverID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RecieverID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SenderID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenderID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbItemType] ([ItemType]) VALUES (@ItemType);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ItemTypeI"& _ 
-                "D, ItemType FROM tbItemType WHERE (ItemTypeID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbMessage] ([RecieverID], [SenderID], [CaseID], [message], [da"& _ 
+                "te], [Readed], [IsFile]) VALUES (@RecieverID, @SenderID, @CaseID, @message, @dat"& _ 
+                "e, @Readed, @IsFile);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT MessageID, RecieverID, SenderID, CaseID, message, "& _ 
+                "date, Readed, IsFile FROM tbMessage WHERE (MessageID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RecieverID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RecieverID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SenderID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbItemType] SET [ItemType] = @ItemType WHERE (([ItemTypeID] = @Orig"& _ 
-                "inal_ItemTypeID) AND ([ItemType] = @Original_ItemType));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ItemTypeID, Ite"& _ 
-                "mType FROM tbItemType WHERE (ItemTypeID = @ItemTypeID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbMessage] SET [RecieverID] = @RecieverID, [SenderID] = @SenderID, "& _ 
+                "[CaseID] = @CaseID, [message] = @message, [date] = @date, [Readed] = @Readed, [I"& _ 
+                "sFile] = @IsFile WHERE (([MessageID] = @Original_MessageID) AND ((@IsNull_Reciev"& _ 
+                "erID = 1 AND [RecieverID] IS NULL) OR ([RecieverID] = @Original_RecieverID)) AND"& _ 
+                " ([SenderID] = @Original_SenderID) AND ((@IsNull_CaseID = 1 AND [CaseID] IS NULL"& _ 
+                ") OR ([CaseID] = @Original_CaseID)) AND ([message] = @Original_message) AND ([da"& _ 
+                "te] = @Original_date) AND ([Readed] = @Original_Readed) AND ([IsFile] = @Origina"& _ 
+                "l_IsFile));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT MessageID, RecieverID, SenderID, CaseID, message, date, Read"& _ 
+                "ed, IsFile FROM tbMessage WHERE (MessageID = @MessageID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemTypeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemTypeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ItemType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ItemTypeID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ItemTypeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RecieverID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RecieverID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SenderID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenderID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MessageID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MessageID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RecieverID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RecieverID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RecieverID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RecieverID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SenderID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenderID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MessageID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "MessageID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -800,7 +1029,8 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ItemTypeID, ItemType FROM dbo.tbItemType"
+            Me._commandCollection(0).CommandText = "SELECT MessageID, RecieverID, SenderID, CaseID, message, date, Readed, IsFile FRO"& _ 
+                "M dbo.tbMessage"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -808,7 +1038,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.tbItemTypeDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.tbMessageDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -821,9 +1051,9 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSet1.tbItemTypeDataTable
+        Public Overloads Overridable Function GetData() As DataSet1.tbMessageDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSet1.tbItemTypeDataTable = New DataSet1.tbItemTypeDataTable()
+            Dim dataTable As DataSet1.tbMessageDataTable = New DataSet1.tbMessageDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -831,7 +1061,7 @@ Namespace DataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.tbItemTypeDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.tbMessageDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -839,7 +1069,7 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As DataSet1) As Integer
-            Return Me.Adapter.Update(dataSet, "tbItemType")
+            Return Me.Adapter.Update(dataSet, "tbMessage")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -860,13 +1090,31 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ItemTypeID As Integer, ByVal Original_ItemType As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ItemTypeID,Integer)
-            If (Original_ItemType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_ItemType")
+        Public Overloads Overridable Function Delete(ByVal Original_MessageID As Integer, ByVal Original_RecieverID As Global.System.Nullable(Of Integer), ByVal Original_SenderID As Integer, ByVal Original_CaseID As Global.System.Nullable(Of Integer), ByVal Original_message As String, ByVal Original_date As Date, ByVal Original_Readed As Boolean, ByVal Original_IsFile As Boolean) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_MessageID,Integer)
+            If (Original_RecieverID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_RecieverID.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ItemType,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_SenderID,Integer)
+            If (Original_CaseID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_CaseID.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (Original_message Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_message")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_message,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_date,Date)
+            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Readed,Boolean)
+            Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_IsFile,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -886,12 +1134,26 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal ItemType As String) As Integer
-            If (ItemType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ItemType")
+        Public Overloads Overridable Function Insert(ByVal RecieverID As Global.System.Nullable(Of Integer), ByVal SenderID As Integer, ByVal CaseID As Global.System.Nullable(Of Integer), ByVal message As String, ByVal _date As Date, ByVal Readed As Boolean, ByVal IsFile As Boolean) As Integer
+            If (RecieverID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(RecieverID.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(ItemType,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
+            Me.Adapter.InsertCommand.Parameters(1).Value = CType(SenderID,Integer)
+            If (CaseID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(CaseID.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (message Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("message")
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(message,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(_date,Date)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(Readed,Boolean)
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(IsFile,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -911,19 +1173,67 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ItemType As String, ByVal Original_ItemTypeID As Integer, ByVal Original_ItemType As String, ByVal ItemTypeID As Integer) As Integer
-            If (ItemType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ItemType")
+        Public Overloads Overridable Function Update( _
+                    ByVal RecieverID As Global.System.Nullable(Of Integer),  _
+                    ByVal SenderID As Integer,  _
+                    ByVal CaseID As Global.System.Nullable(Of Integer),  _
+                    ByVal message As String,  _
+                    ByVal _date As Date,  _
+                    ByVal Readed As Boolean,  _
+                    ByVal IsFile As Boolean,  _
+                    ByVal Original_MessageID As Integer,  _
+                    ByVal Original_RecieverID As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_SenderID As Integer,  _
+                    ByVal Original_CaseID As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_message As String,  _
+                    ByVal Original_date As Date,  _
+                    ByVal Original_Readed As Boolean,  _
+                    ByVal Original_IsFile As Boolean,  _
+                    ByVal MessageID As Integer) As Integer
+            If (RecieverID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(RecieverID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ItemType,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_ItemTypeID,Integer)
-            If (Original_ItemType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_ItemType")
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(SenderID,Integer)
+            If (CaseID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(CaseID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_ItemType,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ItemTypeID,Integer)
+            If (message Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("message")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(message,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(_date,Date)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Readed,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(IsFile,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_MessageID,Integer)
+            If (Original_RecieverID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_RecieverID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_SenderID,Integer)
+            If (Original_CaseID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_CaseID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_message Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_message")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_message,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_date,Date)
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Readed,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_IsFile,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(MessageID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -943,8 +1253,8 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ItemType As String, ByVal Original_ItemTypeID As Integer, ByVal Original_ItemType As String) As Integer
-            Return Me.Update(ItemType, Original_ItemTypeID, Original_ItemType, Original_ItemTypeID)
+        Public Overloads Overridable Function Update(ByVal RecieverID As Global.System.Nullable(Of Integer), ByVal SenderID As Integer, ByVal CaseID As Global.System.Nullable(Of Integer), ByVal message As String, ByVal _date As Date, ByVal Readed As Boolean, ByVal IsFile As Boolean, ByVal Original_MessageID As Integer, ByVal Original_RecieverID As Global.System.Nullable(Of Integer), ByVal Original_SenderID As Integer, ByVal Original_CaseID As Global.System.Nullable(Of Integer), ByVal Original_message As String, ByVal Original_date As Date, ByVal Original_Readed As Boolean, ByVal Original_IsFile As Boolean) As Integer
+            Return Me.Update(RecieverID, SenderID, CaseID, message, _date, Readed, IsFile, Original_MessageID, Original_RecieverID, Original_SenderID, Original_CaseID, Original_message, Original_date, Original_Readed, Original_IsFile, Original_MessageID)
         End Function
     End Class
     
@@ -961,7 +1271,7 @@ Namespace DataSet1TableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _tbItemTypeTableAdapter As tbItemTypeTableAdapter
+        Private _tbMessageTableAdapter As tbMessageTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -983,12 +1293,12 @@ Namespace DataSet1TableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property tbItemTypeTableAdapter() As tbItemTypeTableAdapter
+        Public Property tbMessageTableAdapter() As tbMessageTableAdapter
             Get
-                Return Me._tbItemTypeTableAdapter
+                Return Me._tbMessageTableAdapter
             End Get
             Set
-                Me._tbItemTypeTableAdapter = value
+                Me._tbMessageTableAdapter = value
             End Set
         End Property
         
@@ -1011,9 +1321,9 @@ Namespace DataSet1TableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._tbItemTypeTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._tbItemTypeTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._tbItemTypeTableAdapter.Connection
+                If ((Not (Me._tbMessageTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbMessageTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbMessageTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1028,7 +1338,7 @@ Namespace DataSet1TableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
+                If (Not (Me._tbMessageTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1042,12 +1352,12 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbItemType.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tbMessageTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbMessage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tbItemTypeTableAdapter.Update(updatedRows))
+                    result = (result + Me._tbMessageTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1061,11 +1371,11 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbItemType.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tbMessageTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbMessage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tbItemTypeTableAdapter.Update(addedRows))
+                    result = (result + Me._tbMessageTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1079,11 +1389,11 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbItemType.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tbMessageTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbMessage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tbItemTypeTableAdapter.Update(deletedRows))
+                    result = (result + Me._tbMessageTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1128,8 +1438,8 @@ Namespace DataSet1TableAdapters
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._tbItemTypeTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._tbItemTypeTableAdapter.Connection) = false)) Then
+            If ((Not (Me._tbMessageTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbMessageTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1165,13 +1475,13 @@ Namespace DataSet1TableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._tbItemTypeTableAdapter, Me._tbItemTypeTableAdapter.Connection)
-                    Me._tbItemTypeTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbItemTypeTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._tbItemTypeTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._tbItemTypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbItemTypeTableAdapter.Adapter)
+                If (Not (Me._tbMessageTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbMessageTableAdapter, Me._tbMessageTableAdapter.Connection)
+                    Me._tbMessageTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbMessageTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tbMessageTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbMessageTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbMessageTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1234,9 +1544,9 @@ Namespace DataSet1TableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._tbItemTypeTableAdapter) Is Nothing) Then
-                    Me._tbItemTypeTableAdapter.Connection = CType(revertConnections(Me._tbItemTypeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbItemTypeTableAdapter.Transaction = Nothing
+                If (Not (Me._tbMessageTableAdapter) Is Nothing) Then
+                    Me._tbMessageTableAdapter.Connection = CType(revertConnections(Me._tbMessageTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbMessageTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

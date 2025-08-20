@@ -120,6 +120,9 @@
     <Compile Include="DAL\Table\tbMaterial.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DAL\Table\tbMessage.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\Table\tbTechnician.vb">
       <SubType>Component</SubType>
     </Compile>

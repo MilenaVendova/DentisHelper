@@ -117,6 +117,9 @@
     <Compile Include="DAL\Table\tbDoctor.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DAL\Table\tbItemType.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\Table\tbMaterial.vb">
       <SubType>Component</SubType>
     </Compile>

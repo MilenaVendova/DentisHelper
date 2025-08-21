@@ -166,7 +166,7 @@ Partial Public Class tbMessage
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>
-    Public Overloads Function AddtbMessageRow(ByVal RecieverID As Integer, ByVal SenderID As Integer, ByVal CaseID As Integer, ByVal message As String, ByVal _date As System.DateTimeOffset, ByVal Readed As Boolean, ByVal IsFile As Boolean) As tbMessageRow
+    Public Overloads Function AddtbMessageRow(ByVal RecieverID As Integer, ByVal SenderID As Integer, ByVal CaseID As Integer, ByVal message As String, ByVal _date As Date, ByVal Readed As Boolean, ByVal IsFile As Boolean) As tbMessageRow
         Dim rowtbMessageRow As tbMessageRow = CType(Me.NewRow, tbMessageRow)
         Dim columnValuesArray() As Object = New Object() {Nothing, RecieverID, SenderID, CaseID, message, _date, Readed, IsFile}
         rowtbMessageRow.ItemArray = columnValuesArray
@@ -220,7 +220,7 @@ Partial Public Class tbMessage
         MyBase.Columns.Add(Me.columnCaseID)
         Me.columnmessage = New Global.System.Data.DataColumn("message", GetType(String), Nothing, Global.System.Data.MappingType.Element)
         MyBase.Columns.Add(Me.columnmessage)
-        Me.columndate = New Global.System.Data.DataColumn("date", GetType(Global.System.DateTimeOffset), Nothing, Global.System.Data.MappingType.Element)
+        Me.columndate = New Global.System.Data.DataColumn("date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
         Me.columndate.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "dateColumn")
         Me.columndate.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columndate")
         Me.columndate.ExtendedProperties.Add("Generator_UserColumnName", "date")
@@ -516,7 +516,7 @@ Partial Public Class tbMessage
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTimeOffset, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
@@ -531,7 +531,7 @@ Partial Public Class tbMessage
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SenderID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenderID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTimeOffset, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
@@ -546,7 +546,7 @@ Partial Public Class tbMessage
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SenderID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SenderID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTimeOffset, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MessageID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MessageID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
@@ -556,7 +556,7 @@ Partial Public Class tbMessage
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CaseID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CaseID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_message", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "message", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTimeOffset, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Readed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Readed", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IsFile", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IsFile", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MessageID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "MessageID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
@@ -629,7 +629,7 @@ Partial Public Class tbMessage
         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),
         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),
         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)>
-        Public Overridable Overloads Function Delete(ByVal Original_MessageID As Integer, ByVal Original_RecieverID As Global.System.Nullable(Of Integer), ByVal Original_SenderID As Integer, ByVal Original_CaseID As Global.System.Nullable(Of Integer), ByVal Original_message As String, ByVal Original_date As System.DateTimeOffset, ByVal Original_Readed As Boolean, ByVal Original_IsFile As Boolean) As Integer
+        Public Overridable Overloads Function Delete(ByVal Original_MessageID As Integer, ByVal Original_RecieverID As Global.System.Nullable(Of Integer), ByVal Original_SenderID As Integer, ByVal Original_CaseID As Global.System.Nullable(Of Integer), ByVal Original_message As String, ByVal Original_date As Date, ByVal Original_Readed As Boolean, ByVal Original_IsFile As Boolean) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_MessageID, Integer)
             If (Original_RecieverID.HasValue = True) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0, Object)
@@ -651,7 +651,7 @@ Partial Public Class tbMessage
             Else
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_message, String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_date, System.DateTimeOffset)
+            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_date, Date)
             Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Readed, Boolean)
             Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_IsFile, Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
@@ -673,7 +673,7 @@ Partial Public Class tbMessage
         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),
         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),
         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)>
-        Public Overridable Overloads Function Insert(ByVal RecieverID As Global.System.Nullable(Of Integer), ByVal SenderID As Integer, ByVal CaseID As Global.System.Nullable(Of Integer), ByVal message As String, ByVal _date As System.DateTimeOffset, ByVal Readed As Boolean, ByVal IsFile As Boolean) As Integer
+        Public Overridable Overloads Function Insert(ByVal RecieverID As Global.System.Nullable(Of Integer), ByVal SenderID As Integer, ByVal CaseID As Global.System.Nullable(Of Integer), ByVal message As String, ByVal _date As Date, ByVal Readed As Boolean, ByVal IsFile As Boolean) As Integer
             If (RecieverID.HasValue = True) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(RecieverID.Value, Integer)
             Else
@@ -690,7 +690,7 @@ Partial Public Class tbMessage
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(message, String)
             End If
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(_date, System.DateTimeOffset)
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(_date, Date)
             Me.Adapter.InsertCommand.Parameters(5).Value = CType(Readed, Boolean)
             Me.Adapter.InsertCommand.Parameters(6).Value = CType(IsFile, Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
@@ -717,7 +717,7 @@ Partial Public Class tbMessage
         ByVal SenderID As Integer,
         ByVal CaseID As Global.System.Nullable(Of Integer),
         ByVal message As String,
-        ByVal _date As System.DateTimeOffset,
+        ByVal _date As Date,
         ByVal Readed As Boolean,
         ByVal IsFile As Boolean,
         ByVal Original_MessageID As Integer,
@@ -725,7 +725,7 @@ Partial Public Class tbMessage
         ByVal Original_SenderID As Integer,
         ByVal Original_CaseID As Global.System.Nullable(Of Integer),
         ByVal Original_message As String,
-        ByVal Original_date As System.DateTimeOffset,
+        ByVal Original_date As Date,
         ByVal Original_Readed As Boolean,
         ByVal Original_IsFile As Boolean,
         ByVal MessageID As Integer) As Integer
@@ -745,7 +745,7 @@ Partial Public Class tbMessage
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(message, String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(_date, System.DateTimeOffset)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(_date, Date)
             Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Readed, Boolean)
             Me.Adapter.UpdateCommand.Parameters(6).Value = CType(IsFile, Boolean)
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_MessageID, Integer)
@@ -769,7 +769,7 @@ Partial Public Class tbMessage
             Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_message, String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_date, System.DateTimeOffset)
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_date, Date)
             Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Readed, Boolean)
             Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_IsFile, Boolean)
             Me.Adapter.UpdateCommand.Parameters(17).Value = CType(MessageID, Integer)
@@ -792,7 +792,7 @@ Partial Public Class tbMessage
         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),
         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),
         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)>
-        Public Overridable Overloads Function Update(ByVal RecieverID As Global.System.Nullable(Of Integer), ByVal SenderID As Integer, ByVal CaseID As Global.System.Nullable(Of Integer), ByVal message As String, ByVal _date As System.DateTimeOffset, ByVal Readed As Boolean, ByVal IsFile As Boolean, ByVal Original_MessageID As Integer, ByVal Original_RecieverID As Global.System.Nullable(Of Integer), ByVal Original_SenderID As Integer, ByVal Original_CaseID As Global.System.Nullable(Of Integer), ByVal Original_message As String, ByVal Original_date As System.DateTimeOffset, ByVal Original_Readed As Boolean, ByVal Original_IsFile As Boolean) As Integer
+        Public Overridable Overloads Function Update(ByVal RecieverID As Global.System.Nullable(Of Integer), ByVal SenderID As Integer, ByVal CaseID As Global.System.Nullable(Of Integer), ByVal message As String, ByVal _date As Date, ByVal Readed As Boolean, ByVal IsFile As Boolean, ByVal Original_MessageID As Integer, ByVal Original_RecieverID As Global.System.Nullable(Of Integer), ByVal Original_SenderID As Integer, ByVal Original_CaseID As Global.System.Nullable(Of Integer), ByVal Original_message As String, ByVal Original_date As Date, ByVal Original_Readed As Boolean, ByVal Original_IsFile As Boolean) As Integer
             Return Me.Update(RecieverID, SenderID, CaseID, message, _date, Readed, IsFile, Original_MessageID, Original_RecieverID, Original_SenderID, Original_CaseID, Original_message, Original_date, Original_Readed, Original_IsFile, Original_MessageID)
         End Function
     End Class
@@ -879,9 +879,9 @@ Partial Public Class tbMessageRow
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>
-    Public Property _date() As System.DateTimeOffset
+    Public Property _date() As Date
         Get
-            Return CType(Me(Me.tabletbMessage.dateColumn), Global.System.DateTimeOffset)
+            Return CType(Me(Me.tabletbMessage.dateColumn), Date)
         End Get
         Set
             Me(Me.tabletbMessage.dateColumn) = Value

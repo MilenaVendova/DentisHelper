@@ -142,7 +142,9 @@
     <Compile Include="DAL\Table\tbMessage.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\Table\tbPatient.vb" />
+    <Compile Include="DAL\Table\tbPatient.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\Table\tbPaymentStatus.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -152,7 +154,9 @@
     <Compile Include="DAL\Table\tbPriorityLevel.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\Table\tbShade.vb" />
+    <Compile Include="DAL\Table\tbShade.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\Table\tbSpecialty.vb" />
     <Compile Include="DAL\Table\tbStatusOfCase.vb" />
     <Compile Include="DAL\Table\tbTechnician.vb">

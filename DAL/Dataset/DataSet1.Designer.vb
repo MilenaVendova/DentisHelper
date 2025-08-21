@@ -25,7 +25,15 @@ Option Explicit On
 Partial Public Class DataSet1
     Inherits Global.System.Data.DataSet
     
+<<<<<<< HEAD
     Private tabletbPriorityLevel As tbPriorityLevelDataTable
+=======
+<<<<<<< HEAD
+    Private tabletbPaymentStatus As tbPaymentStatusDataTable
+=======
+    Private tabletbPractice As tbPracticeDataTable
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +64,18 @@ Partial Public Class DataSet1
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
+<<<<<<< HEAD
             If (Not (ds.Tables("tbPriorityLevel")) Is Nothing) Then
                 MyBase.Tables.Add(New tbPriorityLevelDataTable(ds.Tables("tbPriorityLevel")))
+=======
+<<<<<<< HEAD
+            If (Not (ds.Tables("tbPaymentStatus")) Is Nothing) Then
+                MyBase.Tables.Add(New tbPaymentStatusDataTable(ds.Tables("tbPaymentStatus")))
+=======
+            If (Not (ds.Tables("tbPractice")) Is Nothing) Then
+                MyBase.Tables.Add(New tbPracticeDataTable(ds.Tables("tbPractice")))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +98,21 @@ Partial Public Class DataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+<<<<<<< HEAD
     Public ReadOnly Property tbPriorityLevel() As tbPriorityLevelDataTable
         Get
             Return Me.tabletbPriorityLevel
+=======
+<<<<<<< HEAD
+    Public ReadOnly Property tbPaymentStatus() As tbPaymentStatusDataTable
+        Get
+            Return Me.tabletbPaymentStatus
+=======
+    Public ReadOnly Property tbPractice() As tbPracticeDataTable
+        Get
+            Return Me.tabletbPractice
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Get
     End Property
     
@@ -153,8 +183,18 @@ Partial Public Class DataSet1
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
+<<<<<<< HEAD
             If (Not (ds.Tables("tbPriorityLevel")) Is Nothing) Then
                 MyBase.Tables.Add(New tbPriorityLevelDataTable(ds.Tables("tbPriorityLevel")))
+=======
+<<<<<<< HEAD
+            If (Not (ds.Tables("tbPaymentStatus")) Is Nothing) Then
+                MyBase.Tables.Add(New tbPaymentStatusDataTable(ds.Tables("tbPaymentStatus")))
+=======
+            If (Not (ds.Tables("tbPractice")) Is Nothing) Then
+                MyBase.Tables.Add(New tbPracticeDataTable(ds.Tables("tbPractice")))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +228,24 @@ Partial Public Class DataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
+<<<<<<< HEAD
         Me.tabletbPriorityLevel = CType(MyBase.Tables("tbPriorityLevel"),tbPriorityLevelDataTable)
         If (initTable = true) Then
             If (Not (Me.tabletbPriorityLevel) Is Nothing) Then
                 Me.tabletbPriorityLevel.InitVars
+=======
+<<<<<<< HEAD
+        Me.tabletbPaymentStatus = CType(MyBase.Tables("tbPaymentStatus"),tbPaymentStatusDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabletbPaymentStatus) Is Nothing) Then
+                Me.tabletbPaymentStatus.InitVars
+=======
+        Me.tabletbPractice = CType(MyBase.Tables("tbPractice"),tbPracticeDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabletbPractice) Is Nothing) Then
+                Me.tabletbPractice.InitVars
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End If
         End If
     End Sub
@@ -204,13 +258,31 @@ Partial Public Class DataSet1
         Me.Namespace = "http://tempuri.org/DataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
+<<<<<<< HEAD
         Me.tabletbPriorityLevel = New tbPriorityLevelDataTable()
         MyBase.Tables.Add(Me.tabletbPriorityLevel)
+=======
+<<<<<<< HEAD
+        Me.tabletbPaymentStatus = New tbPaymentStatusDataTable()
+        MyBase.Tables.Add(Me.tabletbPaymentStatus)
+=======
+        Me.tabletbPractice = New tbPracticeDataTable()
+        MyBase.Tables.Add(Me.tabletbPractice)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
     Private Function ShouldSerializetbPriorityLevel() As Boolean
+=======
+<<<<<<< HEAD
+    Private Function ShouldSerializetbPaymentStatus() As Boolean
+=======
+    Private Function ShouldSerializetbPractice() As Boolean
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         Return false
     End Function
     
@@ -273,25 +345,73 @@ Partial Public Class DataSet1
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
     Public Delegate Sub tbPriorityLevelRowChangeEventHandler(ByVal sender As Object, ByVal e As tbPriorityLevelRowChangeEvent)
+=======
+<<<<<<< HEAD
+    Public Delegate Sub tbPaymentStatusRowChangeEventHandler(ByVal sender As Object, ByVal e As tbPaymentStatusRowChangeEvent)
+=======
+    Public Delegate Sub tbPracticeRowChangeEventHandler(ByVal sender As Object, ByVal e As tbPracticeRowChangeEvent)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+<<<<<<< HEAD
     Partial Public Class tbPriorityLevelDataTable
         Inherits Global.System.Data.TypedTableBase(Of tbPriorityLevelRow)
+=======
+<<<<<<< HEAD
+    Partial Public Class tbPaymentStatusDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbPaymentStatusRow)
+        
+        Private columnPaymentStatusID As Global.System.Data.DataColumn
+        
+        Private columnPaymentStatus As Global.System.Data.DataColumn
+=======
+    Partial Public Class tbPracticeDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbPracticeRow)
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         
         Private columnPriorityILevelD As Global.System.Data.DataColumn
         
+<<<<<<< HEAD
         Private columnPrioirityLevel As Global.System.Data.DataColumn
+=======
+        Private columnName As Global.System.Data.DataColumn
+        
+        Private columnCompanyName As Global.System.Data.DataColumn
+        
+        Private columnAdress As Global.System.Data.DataColumn
+        
+        Private columnPhone As Global.System.Data.DataColumn
+        
+        Private columnEmail As Global.System.Data.DataColumn
+        
+        Private columnTaxID As Global.System.Data.DataColumn
+        
+        Private columnOpeningHours As Global.System.Data.DataColumn
+        
+        Private columnDelivaryMethod As Global.System.Data.DataColumn
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
+<<<<<<< HEAD
             Me.TableName = "tbPriorityLevel"
+=======
+<<<<<<< HEAD
+            Me.TableName = "tbPaymentStatus"
+=======
+            Me.TableName = "tbPractice"
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -324,17 +444,97 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public ReadOnly Property PriorityILevelDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnPriorityILevelD
+=======
+<<<<<<< HEAD
+        Public ReadOnly Property PaymentStatusIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPaymentStatusID
+=======
+        Public ReadOnly Property PracticeIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPracticeID
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public ReadOnly Property PrioirityLevelColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnPrioirityLevel
+=======
+<<<<<<< HEAD
+        Public ReadOnly Property PaymentStatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPaymentStatus
+=======
+        Public ReadOnly Property NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property CompanyNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCompanyName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property AdressColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAdress
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property PhoneColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPhone
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property EmailColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmail
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property TaxIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTaxID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property OpeningHoursColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOpeningHours
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property DelivaryMethodColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDelivaryMethod
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End Get
         End Property
         
@@ -349,14 +549,46 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Default ReadOnly Property Item(ByVal index As Integer) As tbPriorityLevelRow
             Get
                 Return CType(Me.Rows(index),tbPriorityLevelRow)
+=======
+<<<<<<< HEAD
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbPaymentStatusRow
+            Get
+                Return CType(Me.Rows(index),tbPaymentStatusRow)
+=======
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbPracticeRow
+            Get
+                Return CType(Me.Rows(index),tbPracticeRow)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Event tbPriorityLevelRowChanging As tbPriorityLevelRowChangeEventHandler
+=======
+<<<<<<< HEAD
+        Public Event tbPaymentStatusRowChanging As tbPaymentStatusRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event tbPaymentStatusRowChanged As tbPaymentStatusRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event tbPaymentStatusRowDeleting As tbPaymentStatusRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event tbPaymentStatusRowDeleted As tbPaymentStatusRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Overloads Sub AddtbPaymentStatusRow(ByVal row As tbPaymentStatusRow)
+=======
+        Public Event tbPracticeRowChanging As tbPracticeRowChangeEventHandler
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Event tbPriorityLevelRowChanged As tbPriorityLevelRowChangeEventHandler
@@ -369,30 +601,71 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Overloads Sub AddtbPriorityLevelRow(ByVal row As tbPriorityLevelRow)
+=======
+        Public Overloads Sub AddtbPracticeRow(ByVal row As tbPracticeRow)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Overloads Function AddtbPriorityLevelRow(ByVal PrioirityLevel As String) As tbPriorityLevelRow
             Dim rowtbPriorityLevelRow As tbPriorityLevelRow = CType(Me.NewRow,tbPriorityLevelRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, PrioirityLevel}
             rowtbPriorityLevelRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtbPriorityLevelRow)
             Return rowtbPriorityLevelRow
+=======
+<<<<<<< HEAD
+        Public Overloads Function AddtbPaymentStatusRow(ByVal PaymentStatus As String) As tbPaymentStatusRow
+            Dim rowtbPaymentStatusRow As tbPaymentStatusRow = CType(Me.NewRow,tbPaymentStatusRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, PaymentStatus}
+            rowtbPaymentStatusRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbPaymentStatusRow)
+            Return rowtbPaymentStatusRow
+=======
+        Public Overloads Function AddtbPracticeRow(ByVal Name As String, ByVal CompanyName As String, ByVal Adress As String, ByVal Phone As String, ByVal Email As String, ByVal TaxID As String, ByVal OpeningHours As String, ByVal DelivaryMethod As String) As tbPracticeRow
+            Dim rowtbPracticeRow As tbPracticeRow = CType(Me.NewRow,tbPracticeRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Name, CompanyName, Adress, Phone, Email, TaxID, OpeningHours, DelivaryMethod}
+            rowtbPracticeRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbPracticeRow)
+            Return rowtbPracticeRow
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Function FindByPriorityILevelD(ByVal PriorityILevelD As Integer) As tbPriorityLevelRow
             Return CType(Me.Rows.Find(New Object() {PriorityILevelD}),tbPriorityLevelRow)
+=======
+<<<<<<< HEAD
+        Public Function FindByPaymentStatusID(ByVal PaymentStatusID As Integer) As tbPaymentStatusRow
+            Return CType(Me.Rows.Find(New Object() {PaymentStatusID}),tbPaymentStatusRow)
+=======
+        Public Function FindByPracticeID(ByVal PracticeID As Integer) As tbPracticeRow
+            Return CType(Me.Rows.Find(New Object() {PracticeID}),tbPracticeRow)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
+<<<<<<< HEAD
             Dim cln As tbPriorityLevelDataTable = CType(MyBase.Clone,tbPriorityLevelDataTable)
+=======
+<<<<<<< HEAD
+            Dim cln As tbPaymentStatusDataTable = CType(MyBase.Clone,tbPaymentStatusDataTable)
+=======
+            Dim cln As tbPracticeDataTable = CType(MyBase.Clone,tbPracticeDataTable)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             cln.InitVars
             Return cln
         End Function
@@ -400,19 +673,45 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+<<<<<<< HEAD
             Return New tbPriorityLevelDataTable()
+=======
+<<<<<<< HEAD
+            Return New tbPaymentStatusDataTable()
+=======
+            Return New tbPracticeDataTable()
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
+<<<<<<< HEAD
             Me.columnPriorityILevelD = MyBase.Columns("PriorityILevelD")
             Me.columnPrioirityLevel = MyBase.Columns("PrioirityLevel")
+=======
+<<<<<<< HEAD
+            Me.columnPaymentStatusID = MyBase.Columns("PaymentStatusID")
+            Me.columnPaymentStatus = MyBase.Columns("PaymentStatus")
+=======
+            Me.columnPracticeID = MyBase.Columns("PracticeID")
+            Me.columnName = MyBase.Columns("Name")
+            Me.columnCompanyName = MyBase.Columns("CompanyName")
+            Me.columnAdress = MyBase.Columns("Adress")
+            Me.columnPhone = MyBase.Columns("Phone")
+            Me.columnEmail = MyBase.Columns("Email")
+            Me.columnTaxID = MyBase.Columns("TaxID")
+            Me.columnOpeningHours = MyBase.Columns("OpeningHours")
+            Me.columnDelivaryMethod = MyBase.Columns("DelivaryMethod")
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
+<<<<<<< HEAD
             Me.columnPriorityILevelD = New Global.System.Data.DataColumn("PriorityILevelD", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPriorityILevelD)
             Me.columnPrioirityLevel = New Global.System.Data.DataColumn("PrioirityLevel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -426,32 +725,123 @@ Partial Public Class DataSet1
             Me.columnPriorityILevelD.Unique = true
             Me.columnPrioirityLevel.AllowDBNull = false
             Me.columnPrioirityLevel.MaxLength = 50
+=======
+<<<<<<< HEAD
+            Me.columnPaymentStatusID = New Global.System.Data.DataColumn("PaymentStatusID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPaymentStatusID)
+            Me.columnPaymentStatus = New Global.System.Data.DataColumn("PaymentStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPaymentStatus)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPaymentStatusID}, true))
+            Me.columnPaymentStatusID.AutoIncrement = true
+            Me.columnPaymentStatusID.AutoIncrementSeed = -1
+            Me.columnPaymentStatusID.AutoIncrementStep = -1
+            Me.columnPaymentStatusID.AllowDBNull = false
+            Me.columnPaymentStatusID.ReadOnly = true
+            Me.columnPaymentStatusID.Unique = true
+            Me.columnPaymentStatus.AllowDBNull = false
+            Me.columnPaymentStatus.MaxLength = 100
+=======
+            Me.columnPracticeID = New Global.System.Data.DataColumn("PracticeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPracticeID)
+            Me.columnName = New Global.System.Data.DataColumn("Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnName)
+            Me.columnCompanyName = New Global.System.Data.DataColumn("CompanyName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCompanyName)
+            Me.columnAdress = New Global.System.Data.DataColumn("Adress", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAdress)
+            Me.columnPhone = New Global.System.Data.DataColumn("Phone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPhone)
+            Me.columnEmail = New Global.System.Data.DataColumn("Email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmail)
+            Me.columnTaxID = New Global.System.Data.DataColumn("TaxID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTaxID)
+            Me.columnOpeningHours = New Global.System.Data.DataColumn("OpeningHours", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOpeningHours)
+            Me.columnDelivaryMethod = New Global.System.Data.DataColumn("DelivaryMethod", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDelivaryMethod)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPracticeID}, true))
+            Me.columnPracticeID.AutoIncrement = true
+            Me.columnPracticeID.AutoIncrementSeed = -1
+            Me.columnPracticeID.AutoIncrementStep = -1
+            Me.columnPracticeID.AllowDBNull = false
+            Me.columnPracticeID.ReadOnly = true
+            Me.columnPracticeID.Unique = true
+            Me.columnName.AllowDBNull = false
+            Me.columnName.MaxLength = 1024
+            Me.columnCompanyName.AllowDBNull = false
+            Me.columnCompanyName.MaxLength = 1024
+            Me.columnAdress.AllowDBNull = false
+            Me.columnAdress.MaxLength = 200
+            Me.columnPhone.AllowDBNull = false
+            Me.columnPhone.MaxLength = 100
+            Me.columnEmail.MaxLength = 1024
+            Me.columnTaxID.MaxLength = 1024
+            Me.columnOpeningHours.MaxLength = 100
+            Me.columnDelivaryMethod.MaxLength = 200
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Function NewtbPriorityLevelRow() As tbPriorityLevelRow
             Return CType(Me.NewRow,tbPriorityLevelRow)
+=======
+<<<<<<< HEAD
+        Public Function NewtbPaymentStatusRow() As tbPaymentStatusRow
+            Return CType(Me.NewRow,tbPaymentStatusRow)
+=======
+        Public Function NewtbPracticeRow() As tbPracticeRow
+            Return CType(Me.NewRow,tbPracticeRow)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+<<<<<<< HEAD
             Return New tbPriorityLevelRow(builder)
+=======
+<<<<<<< HEAD
+            Return New tbPaymentStatusRow(builder)
+=======
+            Return New tbPracticeRow(builder)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
+<<<<<<< HEAD
             Return GetType(tbPriorityLevelRow)
+=======
+<<<<<<< HEAD
+            Return GetType(tbPaymentStatusRow)
+=======
+            Return GetType(tbPracticeRow)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
+<<<<<<< HEAD
             If (Not (Me.tbPriorityLevelRowChangedEvent) Is Nothing) Then
                 RaiseEvent tbPriorityLevelRowChanged(Me, New tbPriorityLevelRowChangeEvent(CType(e.Row,tbPriorityLevelRow), e.Action))
+=======
+<<<<<<< HEAD
+            If (Not (Me.tbPaymentStatusRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbPaymentStatusRowChanged(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+=======
+            If (Not (Me.tbPracticeRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbPracticeRowChanged(Me, New tbPracticeRowChangeEvent(CType(e.Row,tbPracticeRow), e.Action))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End If
         End Sub
         
@@ -459,8 +849,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
+<<<<<<< HEAD
             If (Not (Me.tbPriorityLevelRowChangingEvent) Is Nothing) Then
                 RaiseEvent tbPriorityLevelRowChanging(Me, New tbPriorityLevelRowChangeEvent(CType(e.Row,tbPriorityLevelRow), e.Action))
+=======
+<<<<<<< HEAD
+            If (Not (Me.tbPaymentStatusRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbPaymentStatusRowChanging(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+=======
+            If (Not (Me.tbPracticeRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbPracticeRowChanging(Me, New tbPracticeRowChangeEvent(CType(e.Row,tbPracticeRow), e.Action))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End If
         End Sub
         
@@ -468,8 +868,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
+<<<<<<< HEAD
             If (Not (Me.tbPriorityLevelRowDeletedEvent) Is Nothing) Then
                 RaiseEvent tbPriorityLevelRowDeleted(Me, New tbPriorityLevelRowChangeEvent(CType(e.Row,tbPriorityLevelRow), e.Action))
+=======
+<<<<<<< HEAD
+            If (Not (Me.tbPaymentStatusRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbPaymentStatusRowDeleted(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+=======
+            If (Not (Me.tbPracticeRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbPracticeRowDeleted(Me, New tbPracticeRowChangeEvent(CType(e.Row,tbPracticeRow), e.Action))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End If
         End Sub
         
@@ -477,14 +887,32 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
+<<<<<<< HEAD
             If (Not (Me.tbPriorityLevelRowDeletingEvent) Is Nothing) Then
                 RaiseEvent tbPriorityLevelRowDeleting(Me, New tbPriorityLevelRowChangeEvent(CType(e.Row,tbPriorityLevelRow), e.Action))
+=======
+<<<<<<< HEAD
+            If (Not (Me.tbPaymentStatusRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbPaymentStatusRowDeleting(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+=======
+            If (Not (Me.tbPracticeRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbPracticeRowDeleting(Me, New tbPracticeRowChangeEvent(CType(e.Row,tbPracticeRow), e.Action))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Sub RemovetbPriorityLevelRow(ByVal row As tbPriorityLevelRow)
+=======
+<<<<<<< HEAD
+        Public Sub RemovetbPaymentStatusRow(ByVal row As tbPaymentStatusRow)
+=======
+        Public Sub RemovetbPracticeRow(ByVal row As tbPracticeRow)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Me.Rows.Remove(row)
         End Sub
         
@@ -511,7 +939,15 @@ Partial Public Class DataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
+<<<<<<< HEAD
             attribute2.FixedValue = "tbPriorityLevelDataTable"
+=======
+<<<<<<< HEAD
+            attribute2.FixedValue = "tbPaymentStatusDataTable"
+=======
+            attribute2.FixedValue = "tbPracticeDataTable"
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -558,32 +994,85 @@ Partial Public Class DataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
+<<<<<<< HEAD
     Partial Public Class tbPriorityLevelRow
         Inherits Global.System.Data.DataRow
         
         Private tabletbPriorityLevel As tbPriorityLevelDataTable
+=======
+<<<<<<< HEAD
+    Partial Public Class tbPaymentStatusRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tabletbPaymentStatus As tbPaymentStatusDataTable
+=======
+    Partial Public Class tbPracticeRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tabletbPractice As tbPracticeDataTable
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
+<<<<<<< HEAD
             Me.tabletbPriorityLevel = CType(Me.Table,tbPriorityLevelDataTable)
+=======
+<<<<<<< HEAD
+            Me.tabletbPaymentStatus = CType(Me.Table,tbPaymentStatusDataTable)
+=======
+            Me.tabletbPractice = CType(Me.Table,tbPracticeDataTable)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Property PriorityILevelD() As Integer
+=======
+<<<<<<< HEAD
+        Public Property PaymentStatusID() As Integer
+            Get
+                Return CType(Me(Me.tabletbPaymentStatus.PaymentStatusIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletbPaymentStatus.PaymentStatusIDColumn) = value
+=======
+        Public Property PracticeID() As Integer
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Get
                 Return CType(Me(Me.tabletbPriorityLevel.PriorityILevelDColumn),Integer)
             End Get
             Set
+<<<<<<< HEAD
                 Me(Me.tabletbPriorityLevel.PriorityILevelDColumn) = value
+=======
+                Me(Me.tabletbPractice.PracticeIDColumn) = value
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Property PrioirityLevel() As String
+=======
+<<<<<<< HEAD
+        Public Property PaymentStatus() As String
+            Get
+                Return CType(Me(Me.tabletbPaymentStatus.PaymentStatusColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbPaymentStatus.PaymentStatusColumn) = value
+            End Set
+        End Property
+=======
+        Public Property Name() As String
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Get
                 Return CType(Me(Me.tabletbPriorityLevel.PrioirityLevelColumn),String)
             End Get
@@ -591,22 +1080,189 @@ Partial Public Class DataSet1
                 Me(Me.tabletbPriorityLevel.PrioirityLevelColumn) = value
             End Set
         End Property
+<<<<<<< HEAD
+=======
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property CompanyName() As String
+            Get
+                Return CType(Me(Me.tabletbPractice.CompanyNameColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbPractice.CompanyNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Adress() As String
+            Get
+                Return CType(Me(Me.tabletbPractice.AdressColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbPractice.AdressColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Phone() As String
+            Get
+                Return CType(Me(Me.tabletbPractice.PhoneColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbPractice.PhoneColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Email() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbPractice.EmailColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Email' in table 'tbPractice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbPractice.EmailColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property TaxID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbPractice.TaxIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TaxID' in table 'tbPractice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbPractice.TaxIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property OpeningHours() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbPractice.OpeningHoursColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'OpeningHours' in table 'tbPractice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbPractice.OpeningHoursColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property DelivaryMethod() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbPractice.DelivaryMethodColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DelivaryMethod' in table 'tbPractice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbPractice.DelivaryMethodColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsEmailNull() As Boolean
+            Return Me.IsNull(Me.tabletbPractice.EmailColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetEmailNull()
+            Me(Me.tabletbPractice.EmailColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsTaxIDNull() As Boolean
+            Return Me.IsNull(Me.tabletbPractice.TaxIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetTaxIDNull()
+            Me(Me.tabletbPractice.TaxIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsOpeningHoursNull() As Boolean
+            Return Me.IsNull(Me.tabletbPractice.OpeningHoursColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetOpeningHoursNull()
+            Me(Me.tabletbPractice.OpeningHoursColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsDelivaryMethodNull() As Boolean
+            Return Me.IsNull(Me.tabletbPractice.DelivaryMethodColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetDelivaryMethodNull()
+            Me(Me.tabletbPractice.DelivaryMethodColumn) = Global.System.Convert.DBNull
+        End Sub
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
     End Class
     
     '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
     Public Class tbPriorityLevelRowChangeEvent
         Inherits Global.System.EventArgs
         
         Private eventRow As tbPriorityLevelRow
+=======
+<<<<<<< HEAD
+    Public Class tbPaymentStatusRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As tbPaymentStatusRow
+=======
+    Public Class tbPracticeRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As tbPracticeRow
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public Sub New(ByVal row As tbPriorityLevelRow, ByVal action As Global.System.Data.DataRowAction)
+=======
+<<<<<<< HEAD
+        Public Sub New(ByVal row As tbPaymentStatusRow, ByVal action As Global.System.Data.DataRowAction)
+=======
+        Public Sub New(ByVal row As tbPracticeRow, ByVal action As Global.System.Data.DataRowAction)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -614,7 +1270,15 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+<<<<<<< HEAD
         Public ReadOnly Property Row() As tbPriorityLevelRow
+=======
+<<<<<<< HEAD
+        Public ReadOnly Property Row() As tbPaymentStatusRow
+=======
+        Public ReadOnly Property Row() As tbPracticeRow
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Get
                 Return Me.eventRow
             End Get
@@ -641,7 +1305,15 @@ Namespace DataSet1TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+<<<<<<< HEAD
     Partial Public Class tbPriorityLevelTableAdapter
+=======
+<<<<<<< HEAD
+    Partial Public Class tbPaymentStatusTableAdapter
+=======
+    Partial Public Class tbPracticeTableAdapter
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -758,9 +1430,53 @@ Namespace DataSet1TableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
+<<<<<<< HEAD
             tableMapping.DataSetTable = "tbPriorityLevel"
             tableMapping.ColumnMappings.Add("PriorityILevelD", "PriorityILevelD")
             tableMapping.ColumnMappings.Add("PrioirityLevel", "PrioirityLevel")
+=======
+<<<<<<< HEAD
+            tableMapping.DataSetTable = "tbPaymentStatus"
+            tableMapping.ColumnMappings.Add("PaymentStatusID", "PaymentStatusID")
+            tableMapping.ColumnMappings.Add("PaymentStatus", "PaymentStatus")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbPaymentStatus] WHERE (([PaymentStatusID] = @Original_Payment"& _ 
+                "StatusID) AND ([PaymentStatus] = @Original_PaymentStatus))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatusID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatusID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbPaymentStatus] ([PaymentStatus]) VALUES (@PaymentStatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
+                "ELECT PaymentStatusID, PaymentStatus FROM tbPaymentStatus WHERE (PaymentStatusID"& _ 
+                " = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbPaymentStatus] SET [PaymentStatus] = @PaymentStatus WHERE (([Paym"& _ 
+                "entStatusID] = @Original_PaymentStatusID) AND ([PaymentStatus] = @Original_Payme"& _ 
+                "ntStatus));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentStatusID, PaymentStatus FROM tbPaymentStatus WHERE (P"& _ 
+                "aymentStatusID = @PaymentStatusID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatusID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatusID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentStatusID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatusID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+=======
+            tableMapping.DataSetTable = "tbPractice"
+            tableMapping.ColumnMappings.Add("PracticeID", "PracticeID")
+            tableMapping.ColumnMappings.Add("Name", "Name")
+            tableMapping.ColumnMappings.Add("CompanyName", "CompanyName")
+            tableMapping.ColumnMappings.Add("Adress", "Adress")
+            tableMapping.ColumnMappings.Add("Phone", "Phone")
+            tableMapping.ColumnMappings.Add("Email", "Email")
+            tableMapping.ColumnMappings.Add("TaxID", "TaxID")
+            tableMapping.ColumnMappings.Add("OpeningHours", "OpeningHours")
+            tableMapping.ColumnMappings.Add("DelivaryMethod", "DelivaryMethod")
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -782,10 +1498,36 @@ Namespace DataSet1TableAdapters
                 "ioirityLevel));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PriorityILevelD, PrioirityLevel FROM tbPriorityLevel WHE"& _ 
                 "RE (PriorityILevelD = @PriorityILevelD)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+<<<<<<< HEAD
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PrioirityLevel", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrioirityLevel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PriorityILevelD", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PriorityILevelD", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PrioirityLevel", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrioirityLevel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PriorityILevelD", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PriorityILevelD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+=======
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CompanyName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Adress", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adress", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TaxID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TaxID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpeningHours", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpeningHours", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DelivaryMethod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DelivaryMethod", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PracticeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PracticeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CompanyName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Adress", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adress", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TaxID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TaxID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TaxID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TaxID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OpeningHours", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpeningHours", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OpeningHours", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpeningHours", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DelivaryMethod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DelivaryMethod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DelivaryMethod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DelivaryMethod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PracticeID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PracticeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -801,7 +1543,16 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
+<<<<<<< HEAD
             Me._commandCollection(0).CommandText = "SELECT PriorityILevelD, PrioirityLevel FROM dbo.tbPriorityLevel"
+=======
+<<<<<<< HEAD
+            Me._commandCollection(0).CommandText = "SELECT PaymentStatusID, PaymentStatus FROM dbo.tbPaymentStatus"
+=======
+            Me._commandCollection(0).CommandText = "SELECT PracticeID, Name, CompanyName, Adress, Phone, Email, TaxID, OpeningHours, "& _ 
+                "DelivaryMethod FROM dbo.tbPractice"
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -809,7 +1560,15 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+<<<<<<< HEAD
         Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.tbPriorityLevelDataTable) As Integer
+=======
+<<<<<<< HEAD
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.tbPaymentStatusDataTable) As Integer
+=======
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.tbPracticeDataTable) As Integer
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -822,9 +1581,21 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+<<<<<<< HEAD
         Public Overloads Overridable Function GetData() As DataSet1.tbPriorityLevelDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Dim dataTable As DataSet1.tbPriorityLevelDataTable = New DataSet1.tbPriorityLevelDataTable()
+=======
+<<<<<<< HEAD
+        Public Overloads Overridable Function GetData() As DataSet1.tbPaymentStatusDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSet1.tbPaymentStatusDataTable = New DataSet1.tbPaymentStatusDataTable()
+=======
+        Public Overloads Overridable Function GetData() As DataSet1.tbPracticeDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSet1.tbPracticeDataTable = New DataSet1.tbPracticeDataTable()
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -832,7 +1603,15 @@ Namespace DataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+<<<<<<< HEAD
         Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.tbPriorityLevelDataTable) As Integer
+=======
+<<<<<<< HEAD
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.tbPaymentStatusDataTable) As Integer
+=======
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSet1.tbPracticeDataTable) As Integer
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -840,7 +1619,15 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As DataSet1) As Integer
+<<<<<<< HEAD
             Return Me.Adapter.Update(dataSet, "tbPriorityLevel")
+=======
+<<<<<<< HEAD
+            Return Me.Adapter.Update(dataSet, "tbPaymentStatus")
+=======
+            Return Me.Adapter.Update(dataSet, "tbPractice")
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -861,13 +1648,30 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+<<<<<<< HEAD
         Public Overloads Overridable Function Delete(ByVal Original_PriorityILevelD As Integer, ByVal Original_PrioirityLevel As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_PriorityILevelD,Integer)
             If (Original_PrioirityLevel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_PrioirityLevel")
+=======
+<<<<<<< HEAD
+        Public Overloads Overridable Function Delete(ByVal Original_PaymentStatusID As Integer, ByVal Original_PaymentStatus As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_PaymentStatusID,Integer)
+            If (Original_PaymentStatus Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_PaymentStatus")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_PaymentStatus,String)
+            End If
+=======
+        Public Overloads Overridable Function Delete(ByVal Original_PracticeID As Integer, ByVal Original_Name As String, ByVal Original_CompanyName As String, ByVal Original_Adress As String, ByVal Original_Phone As String, ByVal Original_Email As String, ByVal Original_TaxID As String, ByVal Original_OpeningHours As String, ByVal Original_DelivaryMethod As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_PracticeID,Integer)
+            If (Original_Name Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Name")
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_PrioirityLevel,String)
             End If
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -887,12 +1691,27 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+<<<<<<< HEAD
         Public Overloads Overridable Function Insert(ByVal PrioirityLevel As String) As Integer
             If (PrioirityLevel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("PrioirityLevel")
+=======
+<<<<<<< HEAD
+        Public Overloads Overridable Function Insert(ByVal PaymentStatus As String) As Integer
+            If (PaymentStatus Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("PaymentStatus")
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(PaymentStatus,String)
+            End If
+=======
+        Public Overloads Overridable Function Insert(ByVal Name As String, ByVal CompanyName As String, ByVal Adress As String, ByVal Phone As String, ByVal Email As String, ByVal TaxID As String, ByVal OpeningHours As String, ByVal DelivaryMethod As String) As Integer
+            If (Name Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Name")
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(PrioirityLevel,String)
             End If
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -912,9 +1731,48 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+<<<<<<< HEAD
         Public Overloads Overridable Function Update(ByVal PrioirityLevel As String, ByVal Original_PriorityILevelD As Integer, ByVal Original_PrioirityLevel As String, ByVal PriorityILevelD As Integer) As Integer
             If (PrioirityLevel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("PrioirityLevel")
+=======
+<<<<<<< HEAD
+        Public Overloads Overridable Function Update(ByVal PaymentStatus As String, ByVal Original_PaymentStatusID As Integer, ByVal Original_PaymentStatus As String, ByVal PaymentStatusID As Integer) As Integer
+            If (PaymentStatus Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("PaymentStatus")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(PaymentStatus,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_PaymentStatusID,Integer)
+            If (Original_PaymentStatus Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_PaymentStatus")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_PaymentStatus,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(PaymentStatusID,Integer)
+=======
+        Public Overloads Overridable Function Update( _
+                    ByVal Name As String,  _
+                    ByVal CompanyName As String,  _
+                    ByVal Adress As String,  _
+                    ByVal Phone As String,  _
+                    ByVal Email As String,  _
+                    ByVal TaxID As String,  _
+                    ByVal OpeningHours As String,  _
+                    ByVal DelivaryMethod As String,  _
+                    ByVal Original_PracticeID As Integer,  _
+                    ByVal Original_Name As String,  _
+                    ByVal Original_CompanyName As String,  _
+                    ByVal Original_Adress As String,  _
+                    ByVal Original_Phone As String,  _
+                    ByVal Original_Email As String,  _
+                    ByVal Original_TaxID As String,  _
+                    ByVal Original_OpeningHours As String,  _
+                    ByVal Original_DelivaryMethod As String,  _
+                    ByVal PracticeID As Integer) As Integer
+            If (Name Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Name")
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(PrioirityLevel,String)
             End If
@@ -924,7 +1782,91 @@ Namespace DataSet1TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_PrioirityLevel,String)
             End If
+<<<<<<< HEAD
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(PriorityILevelD,Integer)
+=======
+            If (Adress Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Adress")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Adress,String)
+            End If
+            If (Phone Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Phone")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Phone,String)
+            End If
+            If (Email Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Email,String)
+            End If
+            If (TaxID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(TaxID,String)
+            End If
+            If (OpeningHours Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(OpeningHours,String)
+            End If
+            If (DelivaryMethod Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(DelivaryMethod,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_PracticeID,Integer)
+            If (Original_Name Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Name")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Name,String)
+            End If
+            If (Original_CompanyName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_CompanyName")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_CompanyName,String)
+            End If
+            If (Original_Adress Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Adress")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Adress,String)
+            End If
+            If (Original_Phone Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Phone")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Phone,String)
+            End If
+            If (Original_Email Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Email,String)
+            End If
+            If (Original_TaxID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_TaxID,String)
+            End If
+            If (Original_OpeningHours Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_OpeningHours,String)
+            End If
+            If (Original_DelivaryMethod Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_DelivaryMethod,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(PracticeID,Integer)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -944,8 +1886,35 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+<<<<<<< HEAD
         Public Overloads Overridable Function Update(ByVal PrioirityLevel As String, ByVal Original_PriorityILevelD As Integer, ByVal Original_PrioirityLevel As String) As Integer
             Return Me.Update(PrioirityLevel, Original_PriorityILevelD, Original_PrioirityLevel, Original_PriorityILevelD)
+=======
+<<<<<<< HEAD
+        Public Overloads Overridable Function Update(ByVal PaymentStatus As String, ByVal Original_PaymentStatusID As Integer, ByVal Original_PaymentStatus As String) As Integer
+            Return Me.Update(PaymentStatus, Original_PaymentStatusID, Original_PaymentStatus, Original_PaymentStatusID)
+=======
+        Public Overloads Overridable Function Update( _
+                    ByVal Name As String,  _
+                    ByVal CompanyName As String,  _
+                    ByVal Adress As String,  _
+                    ByVal Phone As String,  _
+                    ByVal Email As String,  _
+                    ByVal TaxID As String,  _
+                    ByVal OpeningHours As String,  _
+                    ByVal DelivaryMethod As String,  _
+                    ByVal Original_PracticeID As Integer,  _
+                    ByVal Original_Name As String,  _
+                    ByVal Original_CompanyName As String,  _
+                    ByVal Original_Adress As String,  _
+                    ByVal Original_Phone As String,  _
+                    ByVal Original_Email As String,  _
+                    ByVal Original_TaxID As String,  _
+                    ByVal Original_OpeningHours As String,  _
+                    ByVal Original_DelivaryMethod As String) As Integer
+            Return Me.Update(Name, CompanyName, Adress, Phone, Email, TaxID, OpeningHours, DelivaryMethod, Original_PracticeID, Original_Name, Original_CompanyName, Original_Adress, Original_Phone, Original_Email, Original_TaxID, Original_OpeningHours, Original_DelivaryMethod, Original_PracticeID)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         End Function
     End Class
     
@@ -962,7 +1931,15 @@ Namespace DataSet1TableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
+<<<<<<< HEAD
         Private _tbPriorityLevelTableAdapter As tbPriorityLevelTableAdapter
+=======
+<<<<<<< HEAD
+        Private _tbPaymentStatusTableAdapter As tbPaymentStatusTableAdapter
+=======
+        Private _tbPracticeTableAdapter As tbPracticeTableAdapter
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -984,12 +1961,29 @@ Namespace DataSet1TableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
+<<<<<<< HEAD
         Public Property tbPriorityLevelTableAdapter() As tbPriorityLevelTableAdapter
+=======
+<<<<<<< HEAD
+        Public Property tbPaymentStatusTableAdapter() As tbPaymentStatusTableAdapter
+            Get
+                Return Me._tbPaymentStatusTableAdapter
+            End Get
+            Set
+                Me._tbPaymentStatusTableAdapter = value
+=======
+        Public Property tbPracticeTableAdapter() As tbPracticeTableAdapter
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             Get
                 Return Me._tbPriorityLevelTableAdapter
             End Get
             Set
+<<<<<<< HEAD
                 Me._tbPriorityLevelTableAdapter = value
+=======
+                Me._tbPracticeTableAdapter = value
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
             End Set
         End Property
         
@@ -1012,9 +2006,21 @@ Namespace DataSet1TableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
+<<<<<<< HEAD
                 If ((Not (Me._tbPriorityLevelTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._tbPriorityLevelTableAdapter.Connection) Is Nothing)) Then
                     Return Me._tbPriorityLevelTableAdapter.Connection
+=======
+<<<<<<< HEAD
+                If ((Not (Me._tbPaymentStatusTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbPaymentStatusTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbPaymentStatusTableAdapter.Connection
+=======
+                If ((Not (Me._tbPracticeTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbPracticeTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbPracticeTableAdapter.Connection
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                 End If
                 Return Nothing
             End Get
@@ -1029,7 +2035,15 @@ Namespace DataSet1TableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
+<<<<<<< HEAD
                 If (Not (Me._tbPriorityLevelTableAdapter) Is Nothing) Then
+=======
+<<<<<<< HEAD
+                If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
+=======
+                If (Not (Me._tbPracticeTableAdapter) Is Nothing) Then
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                     count = (count + 1)
                 End If
                 Return count
@@ -1043,12 +2057,30 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+<<<<<<< HEAD
             If (Not (Me._tbPriorityLevelTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbPriorityLevel.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._tbPriorityLevelTableAdapter.Update(updatedRows))
+=======
+<<<<<<< HEAD
+            If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbPaymentStatus.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tbPaymentStatusTableAdapter.Update(updatedRows))
+=======
+            If (Not (Me._tbPracticeTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbPractice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tbPracticeTableAdapter.Update(updatedRows))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1062,11 +2094,27 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+<<<<<<< HEAD
             If (Not (Me._tbPriorityLevelTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.tbPriorityLevel.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._tbPriorityLevelTableAdapter.Update(addedRows))
+=======
+<<<<<<< HEAD
+            If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbPaymentStatus.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tbPaymentStatusTableAdapter.Update(addedRows))
+=======
+            If (Not (Me._tbPracticeTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbPractice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tbPracticeTableAdapter.Update(addedRows))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1080,11 +2128,27 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+<<<<<<< HEAD
             If (Not (Me._tbPriorityLevelTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbPriorityLevel.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._tbPriorityLevelTableAdapter.Update(deletedRows))
+=======
+<<<<<<< HEAD
+            If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbPaymentStatus.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tbPaymentStatusTableAdapter.Update(deletedRows))
+=======
+            If (Not (Me._tbPracticeTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbPractice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tbPracticeTableAdapter.Update(deletedRows))
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1129,8 +2193,18 @@ Namespace DataSet1TableAdapters
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
+<<<<<<< HEAD
             If ((Not (Me._tbPriorityLevelTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._tbPriorityLevelTableAdapter.Connection) = false)) Then
+=======
+<<<<<<< HEAD
+            If ((Not (Me._tbPaymentStatusTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbPaymentStatusTableAdapter.Connection) = false)) Then
+=======
+            If ((Not (Me._tbPracticeTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbPracticeTableAdapter.Connection) = false)) Then
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1166,6 +2240,7 @@ Namespace DataSet1TableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
+<<<<<<< HEAD
                 If (Not (Me._tbPriorityLevelTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._tbPriorityLevelTableAdapter, Me._tbPriorityLevelTableAdapter.Connection)
                     Me._tbPriorityLevelTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -1173,6 +2248,25 @@ Namespace DataSet1TableAdapters
                     If Me._tbPriorityLevelTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._tbPriorityLevelTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._tbPriorityLevelTableAdapter.Adapter)
+=======
+<<<<<<< HEAD
+                If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbPaymentStatusTableAdapter, Me._tbPaymentStatusTableAdapter.Connection)
+                    Me._tbPaymentStatusTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbPaymentStatusTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tbPaymentStatusTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbPaymentStatusTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbPaymentStatusTableAdapter.Adapter)
+=======
+                If (Not (Me._tbPracticeTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbPracticeTableAdapter, Me._tbPracticeTableAdapter.Connection)
+                    Me._tbPracticeTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbPracticeTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tbPracticeTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbPracticeTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbPracticeTableAdapter.Adapter)
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                     End If
                 End If
                 '
@@ -1235,9 +2329,21 @@ Namespace DataSet1TableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
+<<<<<<< HEAD
                 If (Not (Me._tbPriorityLevelTableAdapter) Is Nothing) Then
                     Me._tbPriorityLevelTableAdapter.Connection = CType(revertConnections(Me._tbPriorityLevelTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._tbPriorityLevelTableAdapter.Transaction = Nothing
+=======
+<<<<<<< HEAD
+                If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
+                    Me._tbPaymentStatusTableAdapter.Connection = CType(revertConnections(Me._tbPaymentStatusTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbPaymentStatusTableAdapter.Transaction = Nothing
+=======
+                If (Not (Me._tbPracticeTableAdapter) Is Nothing) Then
+                    Me._tbPracticeTableAdapter.Connection = CType(revertConnections(Me._tbPracticeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbPracticeTableAdapter.Transaction = Nothing
+>>>>>>> 76cee25428f3ffb3fdf7cc5b08fecdd25d87707a
+>>>>>>> 0d3722be9bde1c9e4b5ca6bb7b661d7b25a4825e
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

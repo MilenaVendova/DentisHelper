@@ -114,6 +114,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMilena.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Dataset\DataSetMilena.vb">
+      <DependentUpon>DataSetMilena.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Dataset\DataSetStefan.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

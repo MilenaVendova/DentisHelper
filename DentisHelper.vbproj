@@ -146,7 +146,9 @@
     <Compile Include="DAL\Table\tbMessage.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\Table\tbPatient.vb" />
+    <Compile Include="DAL\Table\tbPatient.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\Table\tbPaymentStatus.vb">
       <SubType>Component</SubType>
     </Compile>

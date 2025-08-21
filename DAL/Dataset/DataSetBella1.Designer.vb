@@ -25,7 +25,7 @@ Option Explicit On
 Partial Public Class DataSetBella
     Inherits Global.System.Data.DataSet
     
-    Private tabletbShade As tbShadeDataTable
+    Private tabletbSpecialty As tbSpecialtyDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class DataSetBella
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("tbShade")) Is Nothing) Then
-                MyBase.Tables.Add(New tbShadeDataTable(ds.Tables("tbShade")))
+            If (Not (ds.Tables("tbSpecialty")) Is Nothing) Then
+                MyBase.Tables.Add(New tbSpecialtyDataTable(ds.Tables("tbSpecialty")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class DataSetBella
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property tbShade() As tbShadeDataTable
+    Public ReadOnly Property tbSpecialty() As tbSpecialtyDataTable
         Get
-            Return Me.tabletbShade
+            Return Me.tabletbSpecialty
         End Get
     End Property
     
@@ -153,8 +153,8 @@ Partial Public Class DataSetBella
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("tbShade")) Is Nothing) Then
-                MyBase.Tables.Add(New tbShadeDataTable(ds.Tables("tbShade")))
+            If (Not (ds.Tables("tbSpecialty")) Is Nothing) Then
+                MyBase.Tables.Add(New tbSpecialtyDataTable(ds.Tables("tbSpecialty")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class DataSetBella
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tabletbShade = CType(MyBase.Tables("tbShade"),tbShadeDataTable)
+        Me.tabletbSpecialty = CType(MyBase.Tables("tbSpecialty"),tbSpecialtyDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabletbShade) Is Nothing) Then
-                Me.tabletbShade.InitVars
+            If (Not (Me.tabletbSpecialty) Is Nothing) Then
+                Me.tabletbSpecialty.InitVars
             End If
         End If
     End Sub
@@ -204,13 +204,13 @@ Partial Public Class DataSetBella
         Me.Namespace = "http://tempuri.org/DataSetBella.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tabletbShade = New tbShadeDataTable()
-        MyBase.Tables.Add(Me.tabletbShade)
+        Me.tabletbSpecialty = New tbSpecialtyDataTable()
+        MyBase.Tables.Add(Me.tabletbSpecialty)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializetbShade() As Boolean
+    Private Function ShouldSerializetbSpecialty() As Boolean
         Return false
     End Function
     
@@ -273,25 +273,25 @@ Partial Public Class DataSetBella
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub tbShadeRowChangeEventHandler(ByVal sender As Object, ByVal e As tbShadeRowChangeEvent)
+    Public Delegate Sub tbSpecialtyRowChangeEventHandler(ByVal sender As Object, ByVal e As tbSpecialtyRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class tbShadeDataTable
-        Inherits Global.System.Data.TypedTableBase(Of tbShadeRow)
+    Partial Public Class tbSpecialtyDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbSpecialtyRow)
         
-        Private columnShadeID As Global.System.Data.DataColumn
+        Private columnSpecialtyID As Global.System.Data.DataColumn
         
-        Private columnShade As Global.System.Data.DataColumn
+        Private columnSpecialty As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "tbShade"
+            Me.TableName = "tbSpecialty"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -324,17 +324,17 @@ Partial Public Class DataSetBella
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ShadeIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property SpecialtyIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnShadeID
+                Return Me.columnSpecialtyID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ShadeColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property SpecialtyColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnShade
+                Return Me.columnSpecialty
             End Get
         End Property
         
@@ -349,50 +349,50 @@ Partial Public Class DataSetBella
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As tbShadeRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbSpecialtyRow
             Get
-                Return CType(Me.Rows(index),tbShadeRow)
+                Return CType(Me.Rows(index),tbSpecialtyRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbShadeRowChanging As tbShadeRowChangeEventHandler
+        Public Event tbSpecialtyRowChanging As tbSpecialtyRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbShadeRowChanged As tbShadeRowChangeEventHandler
+        Public Event tbSpecialtyRowChanged As tbSpecialtyRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbShadeRowDeleting As tbShadeRowChangeEventHandler
+        Public Event tbSpecialtyRowDeleting As tbSpecialtyRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbShadeRowDeleted As tbShadeRowChangeEventHandler
+        Public Event tbSpecialtyRowDeleted As tbSpecialtyRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddtbShadeRow(ByVal row As tbShadeRow)
+        Public Overloads Sub AddtbSpecialtyRow(ByVal row As tbSpecialtyRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddtbShadeRow(ByVal Shade As String) As tbShadeRow
-            Dim rowtbShadeRow As tbShadeRow = CType(Me.NewRow,tbShadeRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Shade}
-            rowtbShadeRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowtbShadeRow)
-            Return rowtbShadeRow
+        Public Overloads Function AddtbSpecialtyRow(ByVal Specialty As String) As tbSpecialtyRow
+            Dim rowtbSpecialtyRow As tbSpecialtyRow = CType(Me.NewRow,tbSpecialtyRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Specialty}
+            rowtbSpecialtyRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbSpecialtyRow)
+            Return rowtbSpecialtyRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByShadeID(ByVal ShadeID As Integer) As tbShadeRow
-            Return CType(Me.Rows.Find(New Object() {ShadeID}),tbShadeRow)
+        Public Function FindBySpecialtyID(ByVal SpecialtyID As Integer) As tbSpecialtyRow
+            Return CType(Me.Rows.Find(New Object() {SpecialtyID}),tbSpecialtyRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As tbShadeDataTable = CType(MyBase.Clone,tbShadeDataTable)
+            Dim cln As tbSpecialtyDataTable = CType(MyBase.Clone,tbSpecialtyDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -400,58 +400,58 @@ Partial Public Class DataSetBella
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New tbShadeDataTable()
+            Return New tbSpecialtyDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnShadeID = MyBase.Columns("ShadeID")
-            Me.columnShade = MyBase.Columns("Shade")
+            Me.columnSpecialtyID = MyBase.Columns("SpecialtyID")
+            Me.columnSpecialty = MyBase.Columns("Specialty")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnShadeID = New Global.System.Data.DataColumn("ShadeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnShadeID)
-            Me.columnShade = New Global.System.Data.DataColumn("Shade", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnShade)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnShadeID}, true))
-            Me.columnShadeID.AutoIncrement = true
-            Me.columnShadeID.AutoIncrementSeed = -1
-            Me.columnShadeID.AutoIncrementStep = -1
-            Me.columnShadeID.AllowDBNull = false
-            Me.columnShadeID.ReadOnly = true
-            Me.columnShadeID.Unique = true
-            Me.columnShade.AllowDBNull = false
-            Me.columnShade.MaxLength = 5
+            Me.columnSpecialtyID = New Global.System.Data.DataColumn("SpecialtyID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSpecialtyID)
+            Me.columnSpecialty = New Global.System.Data.DataColumn("Specialty", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSpecialty)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnSpecialtyID}, true))
+            Me.columnSpecialtyID.AutoIncrement = true
+            Me.columnSpecialtyID.AutoIncrementSeed = -1
+            Me.columnSpecialtyID.AutoIncrementStep = -1
+            Me.columnSpecialtyID.AllowDBNull = false
+            Me.columnSpecialtyID.ReadOnly = true
+            Me.columnSpecialtyID.Unique = true
+            Me.columnSpecialty.AllowDBNull = false
+            Me.columnSpecialty.MaxLength = 200
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewtbShadeRow() As tbShadeRow
-            Return CType(Me.NewRow,tbShadeRow)
+        Public Function NewtbSpecialtyRow() As tbSpecialtyRow
+            Return CType(Me.NewRow,tbSpecialtyRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New tbShadeRow(builder)
+            Return New tbSpecialtyRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(tbShadeRow)
+            Return GetType(tbSpecialtyRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.tbShadeRowChangedEvent) Is Nothing) Then
-                RaiseEvent tbShadeRowChanged(Me, New tbShadeRowChangeEvent(CType(e.Row,tbShadeRow), e.Action))
+            If (Not (Me.tbSpecialtyRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbSpecialtyRowChanged(Me, New tbSpecialtyRowChangeEvent(CType(e.Row,tbSpecialtyRow), e.Action))
             End If
         End Sub
         
@@ -459,8 +459,8 @@ Partial Public Class DataSetBella
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.tbShadeRowChangingEvent) Is Nothing) Then
-                RaiseEvent tbShadeRowChanging(Me, New tbShadeRowChangeEvent(CType(e.Row,tbShadeRow), e.Action))
+            If (Not (Me.tbSpecialtyRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbSpecialtyRowChanging(Me, New tbSpecialtyRowChangeEvent(CType(e.Row,tbSpecialtyRow), e.Action))
             End If
         End Sub
         
@@ -468,8 +468,8 @@ Partial Public Class DataSetBella
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.tbShadeRowDeletedEvent) Is Nothing) Then
-                RaiseEvent tbShadeRowDeleted(Me, New tbShadeRowChangeEvent(CType(e.Row,tbShadeRow), e.Action))
+            If (Not (Me.tbSpecialtyRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbSpecialtyRowDeleted(Me, New tbSpecialtyRowChangeEvent(CType(e.Row,tbSpecialtyRow), e.Action))
             End If
         End Sub
         
@@ -477,14 +477,14 @@ Partial Public Class DataSetBella
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.tbShadeRowDeletingEvent) Is Nothing) Then
-                RaiseEvent tbShadeRowDeleting(Me, New tbShadeRowChangeEvent(CType(e.Row,tbShadeRow), e.Action))
+            If (Not (Me.tbSpecialtyRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbSpecialtyRowDeleting(Me, New tbSpecialtyRowChangeEvent(CType(e.Row,tbSpecialtyRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemovetbShadeRow(ByVal row As tbShadeRow)
+        Public Sub RemovetbSpecialtyRow(ByVal row As tbSpecialtyRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -511,7 +511,7 @@ Partial Public Class DataSetBella
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "tbShadeDataTable"
+            attribute2.FixedValue = "tbSpecialtyDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -558,37 +558,37 @@ Partial Public Class DataSetBella
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class tbShadeRow
+    Partial Public Class tbSpecialtyRow
         Inherits Global.System.Data.DataRow
         
-        Private tabletbShade As tbShadeDataTable
+        Private tabletbSpecialty As tbSpecialtyDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabletbShade = CType(Me.Table,tbShadeDataTable)
+            Me.tabletbSpecialty = CType(Me.Table,tbSpecialtyDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ShadeID() As Integer
+        Public Property SpecialtyID() As Integer
             Get
-                Return CType(Me(Me.tabletbShade.ShadeIDColumn),Integer)
+                Return CType(Me(Me.tabletbSpecialty.SpecialtyIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbShade.ShadeIDColumn) = value
+                Me(Me.tabletbSpecialty.SpecialtyIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Shade() As String
+        Public Property Specialty() As String
             Get
-                Return CType(Me(Me.tabletbShade.ShadeColumn),String)
+                Return CType(Me(Me.tabletbSpecialty.SpecialtyColumn),String)
             End Get
             Set
-                Me(Me.tabletbShade.ShadeColumn) = value
+                Me(Me.tabletbSpecialty.SpecialtyColumn) = value
             End Set
         End Property
     End Class
@@ -597,16 +597,16 @@ Partial Public Class DataSetBella
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class tbShadeRowChangeEvent
+    Public Class tbSpecialtyRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As tbShadeRow
+        Private eventRow As tbSpecialtyRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As tbShadeRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As tbSpecialtyRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -614,7 +614,7 @@ Partial Public Class DataSetBella
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As tbShadeRow
+        Public ReadOnly Property Row() As tbSpecialtyRow
             Get
                 Return Me.eventRow
             End Get
@@ -641,7 +641,7 @@ Namespace DataSetBellaTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class tbShadeTableAdapter
+    Partial Public Class tbSpecialtyTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -758,33 +758,33 @@ Namespace DataSetBellaTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "tbShade"
-            tableMapping.ColumnMappings.Add("ShadeID", "ShadeID")
-            tableMapping.ColumnMappings.Add("Shade", "Shade")
+            tableMapping.DataSetTable = "tbSpecialty"
+            tableMapping.ColumnMappings.Add("SpecialtyID", "SpecialtyID")
+            tableMapping.ColumnMappings.Add("Specialty", "Specialty")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbShade] WHERE (([ShadeID] = @Original_ShadeID) AND ([Shade] ="& _ 
-                " @Original_Shade))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbSpecialty] WHERE (([SpecialtyID] = @Original_SpecialtyID) AN"& _ 
+                "D ([Specialty] = @Original_Specialty))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Shade", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Shade", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SpecialtyID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SpecialtyID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Specialty", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Specialty", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbShade] ([Shade]) VALUES (@Shade);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ShadeID, Shade FRO"& _ 
-                "M tbShade WHERE (ShadeID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbSpecialty] ([Specialty]) VALUES (@Specialty);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Specia"& _ 
+                "ltyID, Specialty FROM tbSpecialty WHERE (SpecialtyID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Shade", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Shade", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Specialty", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Specialty", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbShade] SET [Shade] = @Shade WHERE (([ShadeID] = @Original_ShadeID"& _ 
-                ") AND ([Shade] = @Original_Shade));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ShadeID, Shade FROM tbShade WHERE (S"& _ 
-                "hadeID = @ShadeID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbSpecialty] SET [Specialty] = @Specialty WHERE (([SpecialtyID] = @"& _ 
+                "Original_SpecialtyID) AND ([Specialty] = @Original_Specialty));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Specialt"& _ 
+                "yID, Specialty FROM tbSpecialty WHERE (SpecialtyID = @SpecialtyID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Shade", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Shade", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShadeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Shade", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Shade", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShadeID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ShadeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Specialty", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Specialty", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SpecialtyID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SpecialtyID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Specialty", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Specialty", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SpecialtyID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "SpecialtyID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -800,7 +800,7 @@ Namespace DataSetBellaTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ShadeID, Shade FROM dbo.tbShade"
+            Me._commandCollection(0).CommandText = "SELECT SpecialtyID, Specialty FROM dbo.tbSpecialty"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -808,7 +808,7 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetBella.tbShadeDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetBella.tbSpecialtyDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -821,9 +821,9 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetBella.tbShadeDataTable
+        Public Overloads Overridable Function GetData() As DataSetBella.tbSpecialtyDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetBella.tbShadeDataTable = New DataSetBella.tbShadeDataTable()
+            Dim dataTable As DataSetBella.tbSpecialtyDataTable = New DataSetBella.tbSpecialtyDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -831,7 +831,7 @@ Namespace DataSetBellaTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetBella.tbShadeDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetBella.tbSpecialtyDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -839,7 +839,7 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As DataSetBella) As Integer
-            Return Me.Adapter.Update(dataSet, "tbShade")
+            Return Me.Adapter.Update(dataSet, "tbSpecialty")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -860,12 +860,12 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ShadeID As Integer, ByVal Original_Shade As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ShadeID,Integer)
-            If (Original_Shade Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Shade")
+        Public Overloads Overridable Function Delete(ByVal Original_SpecialtyID As Integer, ByVal Original_Specialty As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_SpecialtyID,Integer)
+            If (Original_Specialty Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Specialty")
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Shade,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Specialty,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -886,11 +886,11 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Shade As String) As Integer
-            If (Shade Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Shade")
+        Public Overloads Overridable Function Insert(ByVal Specialty As String) As Integer
+            If (Specialty Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Specialty")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Shade,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Specialty,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -911,19 +911,19 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Shade As String, ByVal Original_ShadeID As Integer, ByVal Original_Shade As String, ByVal ShadeID As Integer) As Integer
-            If (Shade Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Shade")
+        Public Overloads Overridable Function Update(ByVal Specialty As String, ByVal Original_SpecialtyID As Integer, ByVal Original_Specialty As String, ByVal SpecialtyID As Integer) As Integer
+            If (Specialty Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Specialty")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Shade,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Specialty,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_ShadeID,Integer)
-            If (Original_Shade Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Shade")
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_SpecialtyID,Integer)
+            If (Original_Specialty Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Specialty")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_Shade,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_Specialty,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ShadeID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(SpecialtyID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -943,8 +943,8 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Shade As String, ByVal Original_ShadeID As Integer, ByVal Original_Shade As String) As Integer
-            Return Me.Update(Shade, Original_ShadeID, Original_Shade, Original_ShadeID)
+        Public Overloads Overridable Function Update(ByVal Specialty As String, ByVal Original_SpecialtyID As Integer, ByVal Original_Specialty As String) As Integer
+            Return Me.Update(Specialty, Original_SpecialtyID, Original_Specialty, Original_SpecialtyID)
         End Function
     End Class
     
@@ -961,7 +961,7 @@ Namespace DataSetBellaTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _tbShadeTableAdapter As tbShadeTableAdapter
+        Private _tbSpecialtyTableAdapter As tbSpecialtyTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -983,12 +983,12 @@ Namespace DataSetBellaTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property tbShadeTableAdapter() As tbShadeTableAdapter
+        Public Property tbSpecialtyTableAdapter() As tbSpecialtyTableAdapter
             Get
-                Return Me._tbShadeTableAdapter
+                Return Me._tbSpecialtyTableAdapter
             End Get
             Set
-                Me._tbShadeTableAdapter = value
+                Me._tbSpecialtyTableAdapter = value
             End Set
         End Property
         
@@ -1011,9 +1011,9 @@ Namespace DataSetBellaTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._tbShadeTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._tbShadeTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._tbShadeTableAdapter.Connection
+                If ((Not (Me._tbSpecialtyTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbSpecialtyTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbSpecialtyTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1028,7 +1028,7 @@ Namespace DataSetBellaTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._tbShadeTableAdapter) Is Nothing) Then
+                If (Not (Me._tbSpecialtyTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1042,12 +1042,12 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DataSetBella, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbShadeTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbShade.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tbSpecialtyTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbSpecialty.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tbShadeTableAdapter.Update(updatedRows))
+                    result = (result + Me._tbSpecialtyTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1061,11 +1061,11 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DataSetBella, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbShadeTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbShade.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tbSpecialtyTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbSpecialty.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tbShadeTableAdapter.Update(addedRows))
+                    result = (result + Me._tbSpecialtyTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1079,11 +1079,11 @@ Namespace DataSetBellaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSetBella, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbShadeTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbShade.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tbSpecialtyTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbSpecialty.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tbShadeTableAdapter.Update(deletedRows))
+                    result = (result + Me._tbSpecialtyTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1128,8 +1128,8 @@ Namespace DataSetBellaTableAdapters
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._tbShadeTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._tbShadeTableAdapter.Connection) = false)) Then
+            If ((Not (Me._tbSpecialtyTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbSpecialtyTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1165,13 +1165,13 @@ Namespace DataSetBellaTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._tbShadeTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._tbShadeTableAdapter, Me._tbShadeTableAdapter.Connection)
-                    Me._tbShadeTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbShadeTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._tbShadeTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._tbShadeTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbShadeTableAdapter.Adapter)
+                If (Not (Me._tbSpecialtyTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbSpecialtyTableAdapter, Me._tbSpecialtyTableAdapter.Connection)
+                    Me._tbSpecialtyTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbSpecialtyTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tbSpecialtyTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbSpecialtyTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbSpecialtyTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1234,9 +1234,9 @@ Namespace DataSetBellaTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._tbShadeTableAdapter) Is Nothing) Then
-                    Me._tbShadeTableAdapter.Connection = CType(revertConnections(Me._tbShadeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbShadeTableAdapter.Transaction = Nothing
+                If (Not (Me._tbSpecialtyTableAdapter) Is Nothing) Then
+                    Me._tbSpecialtyTableAdapter.Connection = CType(revertConnections(Me._tbSpecialtyTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbSpecialtyTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

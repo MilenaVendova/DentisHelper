@@ -25,7 +25,7 @@ Option Explicit On
 Partial Public Class DataSetStefan
     Inherits Global.System.Data.DataSet
     
-    Private tabletbPaymentStatus As tbPaymentStatusDataTable
+    Private tabletbUser As tbUserDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class DataSetStefan
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("tbPaymentStatus")) Is Nothing) Then
-                MyBase.Tables.Add(New tbPaymentStatusDataTable(ds.Tables("tbPaymentStatus")))
+            If (Not (ds.Tables("tbUser")) Is Nothing) Then
+                MyBase.Tables.Add(New tbUserDataTable(ds.Tables("tbUser")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class DataSetStefan
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property tbPaymentStatus() As tbPaymentStatusDataTable
+    Public ReadOnly Property tbUser() As tbUserDataTable
         Get
-            Return Me.tabletbPaymentStatus
+            Return Me.tabletbUser
         End Get
     End Property
     
@@ -153,8 +153,8 @@ Partial Public Class DataSetStefan
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("tbPaymentStatus")) Is Nothing) Then
-                MyBase.Tables.Add(New tbPaymentStatusDataTable(ds.Tables("tbPaymentStatus")))
+            If (Not (ds.Tables("tbUser")) Is Nothing) Then
+                MyBase.Tables.Add(New tbUserDataTable(ds.Tables("tbUser")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class DataSetStefan
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tabletbPaymentStatus = CType(MyBase.Tables("tbPaymentStatus"),tbPaymentStatusDataTable)
+        Me.tabletbUser = CType(MyBase.Tables("tbUser"),tbUserDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabletbPaymentStatus) Is Nothing) Then
-                Me.tabletbPaymentStatus.InitVars
+            If (Not (Me.tabletbUser) Is Nothing) Then
+                Me.tabletbUser.InitVars
             End If
         End If
     End Sub
@@ -204,13 +204,13 @@ Partial Public Class DataSetStefan
         Me.Namespace = "http://tempuri.org/DataSetStefan.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tabletbPaymentStatus = New tbPaymentStatusDataTable()
-        MyBase.Tables.Add(Me.tabletbPaymentStatus)
+        Me.tabletbUser = New tbUserDataTable()
+        MyBase.Tables.Add(Me.tabletbUser)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializetbPaymentStatus() As Boolean
+    Private Function ShouldSerializetbUser() As Boolean
         Return false
     End Function
     
@@ -273,25 +273,29 @@ Partial Public Class DataSetStefan
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub tbPaymentStatusRowChangeEventHandler(ByVal sender As Object, ByVal e As tbPaymentStatusRowChangeEvent)
+    Public Delegate Sub tbUserRowChangeEventHandler(ByVal sender As Object, ByVal e As tbUserRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class tbPaymentStatusDataTable
-        Inherits Global.System.Data.TypedTableBase(Of tbPaymentStatusRow)
+    Partial Public Class tbUserDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbUserRow)
         
-        Private columnPaymentStatusID As Global.System.Data.DataColumn
+        Private columnUserID As Global.System.Data.DataColumn
         
-        Private columnPaymentStatus As Global.System.Data.DataColumn
+        Private columnUserName As Global.System.Data.DataColumn
+        
+        Private columnDoctorID As Global.System.Data.DataColumn
+        
+        Private columnTechnicianID As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "tbPaymentStatus"
+            Me.TableName = "tbUser"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -324,17 +328,33 @@ Partial Public Class DataSetStefan
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property PaymentStatusIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property UserIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPaymentStatusID
+                Return Me.columnUserID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property PaymentStatusColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property UserNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPaymentStatus
+                Return Me.columnUserName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property DoctorIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDoctorID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property TechnicianIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTechnicianID
             End Get
         End Property
         
@@ -349,50 +369,50 @@ Partial Public Class DataSetStefan
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As tbPaymentStatusRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbUserRow
             Get
-                Return CType(Me.Rows(index),tbPaymentStatusRow)
+                Return CType(Me.Rows(index),tbUserRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPaymentStatusRowChanging As tbPaymentStatusRowChangeEventHandler
+        Public Event tbUserRowChanging As tbUserRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPaymentStatusRowChanged As tbPaymentStatusRowChangeEventHandler
+        Public Event tbUserRowChanged As tbUserRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPaymentStatusRowDeleting As tbPaymentStatusRowChangeEventHandler
+        Public Event tbUserRowDeleting As tbUserRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event tbPaymentStatusRowDeleted As tbPaymentStatusRowChangeEventHandler
+        Public Event tbUserRowDeleted As tbUserRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddtbPaymentStatusRow(ByVal row As tbPaymentStatusRow)
+        Public Overloads Sub AddtbUserRow(ByVal row As tbUserRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddtbPaymentStatusRow(ByVal PaymentStatus As String) As tbPaymentStatusRow
-            Dim rowtbPaymentStatusRow As tbPaymentStatusRow = CType(Me.NewRow,tbPaymentStatusRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, PaymentStatus}
-            rowtbPaymentStatusRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowtbPaymentStatusRow)
-            Return rowtbPaymentStatusRow
+        Public Overloads Function AddtbUserRow(ByVal UserName As String, ByVal DoctorID As Integer, ByVal TechnicianID As Integer) As tbUserRow
+            Dim rowtbUserRow As tbUserRow = CType(Me.NewRow,tbUserRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, UserName, DoctorID, TechnicianID}
+            rowtbUserRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbUserRow)
+            Return rowtbUserRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByPaymentStatusID(ByVal PaymentStatusID As Integer) As tbPaymentStatusRow
-            Return CType(Me.Rows.Find(New Object() {PaymentStatusID}),tbPaymentStatusRow)
+        Public Function FindByUserID(ByVal UserID As Integer) As tbUserRow
+            Return CType(Me.Rows.Find(New Object() {UserID}),tbUserRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As tbPaymentStatusDataTable = CType(MyBase.Clone,tbPaymentStatusDataTable)
+            Dim cln As tbUserDataTable = CType(MyBase.Clone,tbUserDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -400,58 +420,64 @@ Partial Public Class DataSetStefan
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New tbPaymentStatusDataTable()
+            Return New tbUserDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnPaymentStatusID = MyBase.Columns("PaymentStatusID")
-            Me.columnPaymentStatus = MyBase.Columns("PaymentStatus")
+            Me.columnUserID = MyBase.Columns("UserID")
+            Me.columnUserName = MyBase.Columns("UserName")
+            Me.columnDoctorID = MyBase.Columns("DoctorID")
+            Me.columnTechnicianID = MyBase.Columns("TechnicianID")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnPaymentStatusID = New Global.System.Data.DataColumn("PaymentStatusID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPaymentStatusID)
-            Me.columnPaymentStatus = New Global.System.Data.DataColumn("PaymentStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPaymentStatus)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPaymentStatusID}, true))
-            Me.columnPaymentStatusID.AutoIncrement = true
-            Me.columnPaymentStatusID.AutoIncrementSeed = -1
-            Me.columnPaymentStatusID.AutoIncrementStep = -1
-            Me.columnPaymentStatusID.AllowDBNull = false
-            Me.columnPaymentStatusID.ReadOnly = true
-            Me.columnPaymentStatusID.Unique = true
-            Me.columnPaymentStatus.AllowDBNull = false
-            Me.columnPaymentStatus.MaxLength = 100
+            Me.columnUserID = New Global.System.Data.DataColumn("UserID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUserID)
+            Me.columnUserName = New Global.System.Data.DataColumn("UserName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUserName)
+            Me.columnDoctorID = New Global.System.Data.DataColumn("DoctorID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDoctorID)
+            Me.columnTechnicianID = New Global.System.Data.DataColumn("TechnicianID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTechnicianID)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnUserID}, true))
+            Me.columnUserID.AutoIncrement = true
+            Me.columnUserID.AutoIncrementSeed = -1
+            Me.columnUserID.AutoIncrementStep = -1
+            Me.columnUserID.AllowDBNull = false
+            Me.columnUserID.ReadOnly = true
+            Me.columnUserID.Unique = true
+            Me.columnUserName.AllowDBNull = false
+            Me.columnUserName.MaxLength = 200
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewtbPaymentStatusRow() As tbPaymentStatusRow
-            Return CType(Me.NewRow,tbPaymentStatusRow)
+        Public Function NewtbUserRow() As tbUserRow
+            Return CType(Me.NewRow,tbUserRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New tbPaymentStatusRow(builder)
+            Return New tbUserRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(tbPaymentStatusRow)
+            Return GetType(tbUserRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.tbPaymentStatusRowChangedEvent) Is Nothing) Then
-                RaiseEvent tbPaymentStatusRowChanged(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+            If (Not (Me.tbUserRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbUserRowChanged(Me, New tbUserRowChangeEvent(CType(e.Row,tbUserRow), e.Action))
             End If
         End Sub
         
@@ -459,8 +485,8 @@ Partial Public Class DataSetStefan
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.tbPaymentStatusRowChangingEvent) Is Nothing) Then
-                RaiseEvent tbPaymentStatusRowChanging(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+            If (Not (Me.tbUserRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbUserRowChanging(Me, New tbUserRowChangeEvent(CType(e.Row,tbUserRow), e.Action))
             End If
         End Sub
         
@@ -468,8 +494,8 @@ Partial Public Class DataSetStefan
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.tbPaymentStatusRowDeletedEvent) Is Nothing) Then
-                RaiseEvent tbPaymentStatusRowDeleted(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+            If (Not (Me.tbUserRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbUserRowDeleted(Me, New tbUserRowChangeEvent(CType(e.Row,tbUserRow), e.Action))
             End If
         End Sub
         
@@ -477,14 +503,14 @@ Partial Public Class DataSetStefan
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.tbPaymentStatusRowDeletingEvent) Is Nothing) Then
-                RaiseEvent tbPaymentStatusRowDeleting(Me, New tbPaymentStatusRowChangeEvent(CType(e.Row,tbPaymentStatusRow), e.Action))
+            If (Not (Me.tbUserRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbUserRowDeleting(Me, New tbUserRowChangeEvent(CType(e.Row,tbUserRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemovetbPaymentStatusRow(ByVal row As tbPaymentStatusRow)
+        Public Sub RemovetbUserRow(ByVal row As tbUserRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -511,7 +537,7 @@ Partial Public Class DataSetStefan
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "tbPaymentStatusDataTable"
+            attribute2.FixedValue = "tbUserDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -558,55 +584,109 @@ Partial Public Class DataSetStefan
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class tbPaymentStatusRow
+    Partial Public Class tbUserRow
         Inherits Global.System.Data.DataRow
         
-        Private tabletbPaymentStatus As tbPaymentStatusDataTable
+        Private tabletbUser As tbUserDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabletbPaymentStatus = CType(Me.Table,tbPaymentStatusDataTable)
+            Me.tabletbUser = CType(Me.Table,tbUserDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property PaymentStatusID() As Integer
+        Public Property UserID() As Integer
             Get
-                Return CType(Me(Me.tabletbPaymentStatus.PaymentStatusIDColumn),Integer)
+                Return CType(Me(Me.tabletbUser.UserIDColumn),Integer)
             End Get
             Set
-                Me(Me.tabletbPaymentStatus.PaymentStatusIDColumn) = value
+                Me(Me.tabletbUser.UserIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property PaymentStatus() As String
+        Public Property UserName() As String
             Get
-                Return CType(Me(Me.tabletbPaymentStatus.PaymentStatusColumn),String)
+                Return CType(Me(Me.tabletbUser.UserNameColumn),String)
             End Get
             Set
-                Me(Me.tabletbPaymentStatus.PaymentStatusColumn) = value
+                Me(Me.tabletbUser.UserNameColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property DoctorID() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbUser.DoctorIDColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DoctorID' in table 'tbUser' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbUser.DoctorIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property TechnicianID() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbUser.TechnicianIDColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TechnicianID' in table 'tbUser' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbUser.TechnicianIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsDoctorIDNull() As Boolean
+            Return Me.IsNull(Me.tabletbUser.DoctorIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetDoctorIDNull()
+            Me(Me.tabletbUser.DoctorIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsTechnicianIDNull() As Boolean
+            Return Me.IsNull(Me.tabletbUser.TechnicianIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetTechnicianIDNull()
+            Me(Me.tabletbUser.TechnicianIDColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class tbPaymentStatusRowChangeEvent
+    Public Class tbUserRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As tbPaymentStatusRow
+        Private eventRow As tbUserRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As tbPaymentStatusRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As tbUserRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -614,7 +694,7 @@ Partial Public Class DataSetStefan
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As tbPaymentStatusRow
+        Public ReadOnly Property Row() As tbUserRow
             Get
                 Return Me.eventRow
             End Get
@@ -641,7 +721,7 @@ Namespace DataSetStefanTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class tbPaymentStatusTableAdapter
+    Partial Public Class tbUserTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -758,35 +838,53 @@ Namespace DataSetStefanTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "tbPaymentStatus"
-            tableMapping.ColumnMappings.Add("PaymentStatusID", "PaymentStatusID")
-            tableMapping.ColumnMappings.Add("PaymentStatus", "PaymentStatus")
+            tableMapping.DataSetTable = "tbUser"
+            tableMapping.ColumnMappings.Add("UserID", "UserID")
+            tableMapping.ColumnMappings.Add("UserName", "UserName")
+            tableMapping.ColumnMappings.Add("DoctorID", "DoctorID")
+            tableMapping.ColumnMappings.Add("TechnicianID", "TechnicianID")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbPaymentStatus] WHERE (([PaymentStatusID] = @Original_Payment"& _ 
-                "StatusID) AND ([PaymentStatus] = @Original_PaymentStatus))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbUser] WHERE (([UserID] = @Original_UserID) AND ([UserName] ="& _ 
+                " @Original_UserName) AND ((@IsNull_DoctorID = 1 AND [DoctorID] IS NULL) OR ([Doc"& _ 
+                "torID] = @Original_DoctorID)) AND ((@IsNull_TechnicianID = 1 AND [TechnicianID] "& _ 
+                "IS NULL) OR ([TechnicianID] = @Original_TechnicianID)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatusID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatusID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DoctorID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DoctorID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DoctorID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DoctorID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TechnicianID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TechnicianID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TechnicianID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TechnicianID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbPaymentStatus] ([PaymentStatus]) VALUES (@PaymentStatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
-                "ELECT PaymentStatusID, PaymentStatus FROM tbPaymentStatus WHERE (PaymentStatusID"& _ 
-                " = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbUser] ([UserName], [DoctorID], [TechnicianID]) VALUES (@User"& _ 
+                "Name, @DoctorID, @TechnicianID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UserID, UserName, DoctorID, TechnicianI"& _ 
+                "D FROM tbUser WHERE (UserID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DoctorID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DoctorID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TechnicianID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TechnicianID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbPaymentStatus] SET [PaymentStatus] = @PaymentStatus WHERE (([Paym"& _ 
-                "entStatusID] = @Original_PaymentStatusID) AND ([PaymentStatus] = @Original_Payme"& _ 
-                "ntStatus));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentStatusID, PaymentStatus FROM tbPaymentStatus WHERE (P"& _ 
-                "aymentStatusID = @PaymentStatusID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbUser] SET [UserName] = @UserName, [DoctorID] = @DoctorID, [Techni"& _ 
+                "cianID] = @TechnicianID WHERE (([UserID] = @Original_UserID) AND ([UserName] = @"& _ 
+                "Original_UserName) AND ((@IsNull_DoctorID = 1 AND [DoctorID] IS NULL) OR ([Docto"& _ 
+                "rID] = @Original_DoctorID)) AND ((@IsNull_TechnicianID = 1 AND [TechnicianID] IS"& _ 
+                " NULL) OR ([TechnicianID] = @Original_TechnicianID)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UserID, UserName,"& _ 
+                " DoctorID, TechnicianID FROM tbUser WHERE (UserID = @UserID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatusID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatusID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentStatusID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentStatusID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DoctorID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DoctorID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TechnicianID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TechnicianID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DoctorID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DoctorID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DoctorID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DoctorID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TechnicianID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TechnicianID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TechnicianID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TechnicianID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -802,7 +900,7 @@ Namespace DataSetStefanTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT PaymentStatusID, PaymentStatus FROM dbo.tbPaymentStatus"
+            Me._commandCollection(0).CommandText = "SELECT UserID, UserName, DoctorID, TechnicianID FROM dbo.tbUser"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -810,7 +908,7 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetStefan.tbPaymentStatusDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetStefan.tbUserDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -823,9 +921,9 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetStefan.tbPaymentStatusDataTable
+        Public Overloads Overridable Function GetData() As DataSetStefan.tbUserDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetStefan.tbPaymentStatusDataTable = New DataSetStefan.tbPaymentStatusDataTable()
+            Dim dataTable As DataSetStefan.tbUserDataTable = New DataSetStefan.tbUserDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -833,7 +931,7 @@ Namespace DataSetStefanTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetStefan.tbPaymentStatusDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetStefan.tbUserDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -841,7 +939,7 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As DataSetStefan) As Integer
-            Return Me.Adapter.Update(dataSet, "tbPaymentStatus")
+            Return Me.Adapter.Update(dataSet, "tbUser")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -862,12 +960,26 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_PaymentStatusID As Integer, ByVal Original_PaymentStatus As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_PaymentStatusID,Integer)
-            If (Original_PaymentStatus Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_PaymentStatus")
+        Public Overloads Overridable Function Delete(ByVal Original_UserID As Integer, ByVal Original_UserName As String, ByVal Original_DoctorID As Global.System.Nullable(Of Integer), ByVal Original_TechnicianID As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_UserID,Integer)
+            If (Original_UserName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_UserName")
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_PaymentStatus,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_UserName,String)
+            End If
+            If (Original_DoctorID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_DoctorID.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TechnicianID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_TechnicianID.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -888,11 +1000,21 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal PaymentStatus As String) As Integer
-            If (PaymentStatus Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("PaymentStatus")
+        Public Overloads Overridable Function Insert(ByVal UserName As String, ByVal DoctorID As Global.System.Nullable(Of Integer), ByVal TechnicianID As Global.System.Nullable(Of Integer)) As Integer
+            If (UserName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("UserName")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(PaymentStatus,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(UserName,String)
+            End If
+            If (DoctorID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(DoctorID.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (TechnicianID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(TechnicianID.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -913,19 +1035,43 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal PaymentStatus As String, ByVal Original_PaymentStatusID As Integer, ByVal Original_PaymentStatus As String, ByVal PaymentStatusID As Integer) As Integer
-            If (PaymentStatus Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("PaymentStatus")
+        Public Overloads Overridable Function Update(ByVal UserName As String, ByVal DoctorID As Global.System.Nullable(Of Integer), ByVal TechnicianID As Global.System.Nullable(Of Integer), ByVal Original_UserID As Integer, ByVal Original_UserName As String, ByVal Original_DoctorID As Global.System.Nullable(Of Integer), ByVal Original_TechnicianID As Global.System.Nullable(Of Integer), ByVal UserID As Integer) As Integer
+            If (UserName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("UserName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(PaymentStatus,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(UserName,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_PaymentStatusID,Integer)
-            If (Original_PaymentStatus Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_PaymentStatus")
+            If (DoctorID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(DoctorID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_PaymentStatus,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(PaymentStatusID,Integer)
+            If (TechnicianID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TechnicianID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_UserID,Integer)
+            If (Original_UserName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_UserName")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_UserName,String)
+            End If
+            If (Original_DoctorID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_DoctorID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TechnicianID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_TechnicianID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(UserID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -945,8 +1091,8 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal PaymentStatus As String, ByVal Original_PaymentStatusID As Integer, ByVal Original_PaymentStatus As String) As Integer
-            Return Me.Update(PaymentStatus, Original_PaymentStatusID, Original_PaymentStatus, Original_PaymentStatusID)
+        Public Overloads Overridable Function Update(ByVal UserName As String, ByVal DoctorID As Global.System.Nullable(Of Integer), ByVal TechnicianID As Global.System.Nullable(Of Integer), ByVal Original_UserID As Integer, ByVal Original_UserName As String, ByVal Original_DoctorID As Global.System.Nullable(Of Integer), ByVal Original_TechnicianID As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(UserName, DoctorID, TechnicianID, Original_UserID, Original_UserName, Original_DoctorID, Original_TechnicianID, Original_UserID)
         End Function
     End Class
     
@@ -963,7 +1109,7 @@ Namespace DataSetStefanTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _tbPaymentStatusTableAdapter As tbPaymentStatusTableAdapter
+        Private _tbUserTableAdapter As tbUserTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -985,12 +1131,12 @@ Namespace DataSetStefanTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property tbPaymentStatusTableAdapter() As tbPaymentStatusTableAdapter
+        Public Property tbUserTableAdapter() As tbUserTableAdapter
             Get
-                Return Me._tbPaymentStatusTableAdapter
+                Return Me._tbUserTableAdapter
             End Get
             Set
-                Me._tbPaymentStatusTableAdapter = value
+                Me._tbUserTableAdapter = value
             End Set
         End Property
         
@@ -1013,9 +1159,9 @@ Namespace DataSetStefanTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._tbPaymentStatusTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._tbPaymentStatusTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._tbPaymentStatusTableAdapter.Connection
+                If ((Not (Me._tbUserTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbUserTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbUserTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1030,7 +1176,7 @@ Namespace DataSetStefanTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
+                If (Not (Me._tbUserTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1044,12 +1190,12 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DataSetStefan, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbPaymentStatus.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tbUserTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbUser.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tbPaymentStatusTableAdapter.Update(updatedRows))
+                    result = (result + Me._tbUserTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1063,11 +1209,11 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DataSetStefan, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbPaymentStatus.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tbUserTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbUser.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tbPaymentStatusTableAdapter.Update(addedRows))
+                    result = (result + Me._tbUserTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1081,11 +1227,11 @@ Namespace DataSetStefanTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSetStefan, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbPaymentStatus.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tbUserTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbUser.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tbPaymentStatusTableAdapter.Update(deletedRows))
+                    result = (result + Me._tbUserTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1130,8 +1276,8 @@ Namespace DataSetStefanTableAdapters
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._tbPaymentStatusTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._tbPaymentStatusTableAdapter.Connection) = false)) Then
+            If ((Not (Me._tbUserTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbUserTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1167,13 +1313,13 @@ Namespace DataSetStefanTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._tbPaymentStatusTableAdapter, Me._tbPaymentStatusTableAdapter.Connection)
-                    Me._tbPaymentStatusTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbPaymentStatusTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._tbPaymentStatusTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._tbPaymentStatusTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbPaymentStatusTableAdapter.Adapter)
+                If (Not (Me._tbUserTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbUserTableAdapter, Me._tbUserTableAdapter.Connection)
+                    Me._tbUserTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbUserTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tbUserTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbUserTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbUserTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1236,9 +1382,9 @@ Namespace DataSetStefanTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._tbPaymentStatusTableAdapter) Is Nothing) Then
-                    Me._tbPaymentStatusTableAdapter.Connection = CType(revertConnections(Me._tbPaymentStatusTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbPaymentStatusTableAdapter.Transaction = Nothing
+                If (Not (Me._tbUserTableAdapter) Is Nothing) Then
+                    Me._tbUserTableAdapter.Connection = CType(revertConnections(Me._tbUserTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tbUserTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

@@ -104,6 +104,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Dataset\DataSetStefan.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetStefan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Dataset\dsClassControler.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +192,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DAL\Dataset\DataSetStefan.xsc">
+      <DependentUpon>DataSetStefan.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\Dataset\DataSetStefan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetStefan.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DAL\Dataset\DataSetStefan.xss">
+      <DependentUpon>DataSetStefan.xsd</DependentUpon>
+    </None>
     <None Include="DAL\Dataset\dsClassControler.xsc">
       <DependentUpon>dsClassControler.xsd</DependentUpon>
     </None>

@@ -135,6 +135,9 @@
     <Compile Include="DAL\Table\tbPractice.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DAL\Table\tbPriorityLevel.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\Table\tbTechnician.vb">
       <SubType>Component</SubType>
     </Compile>

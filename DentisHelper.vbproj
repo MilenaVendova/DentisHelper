@@ -74,7 +74,7 @@
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -114,6 +114,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsClassControler.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Table\tbCase.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\Table\tbDoctor.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -121,6 +124,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAL\Table\tbMaterial.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\Table\tbMaterial_ItemType.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAL\Table\tbMessage.vb">
@@ -202,6 +208,9 @@
     <None Include="DAL\Dataset\dsClassControler.xss">
       <DependentUpon>dsClassControler.xsd</DependentUpon>
     </None>
+    <Compile Include="DAL\Table\tbDoctor_Practice.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
